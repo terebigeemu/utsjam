@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://k7htlbdfk67y"]
+
+[ext_resource type="Texture2D" uid="uid://l7v55dqglkdj" path="res://USU Clubs logo.png" id="1_37kl0"]
+
+[node name="Node2D" type="Node2D" unique_id=1149442894]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1179622450]
+position = Vector2(423, 243)
+texture = ExtResource("1_37kl0")
