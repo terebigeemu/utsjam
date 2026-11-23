@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxmsgblhnyi6a"
-path="res://.godot/imported/blackRectangle-removebg-preview.png-36fd517fe197f1110a73060fd0dc9ac2.ctex"
+path="res://.godot/imported/lightFlicker-removebg-preview.png-f76e36bada3d3829c536e71d73fd44eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/blackRectangle-removebg-preview.png"
-dest_files=["res://.godot/imported/blackRectangle-removebg-preview.png-36fd517fe197f1110a73060fd0dc9ac2.ctex"]
+source_file="res://Sprites/lightFlicker-removebg-preview.png"
+dest_files=["res://.godot/imported/lightFlicker-removebg-preview.png-f76e36bada3d3829c536e71d73fd44eb.ctex"]
 
 [params]
 

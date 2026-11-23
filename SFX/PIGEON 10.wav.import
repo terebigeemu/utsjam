@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwr7atoiyu1wb"
+path="res://.godot/imported/PIGEON 10.wav-cfcc61c6de1c6172e40e95392bf9f8a6.sample"
+
+[deps]
+
+source_file="res://SFX/PIGEON 10.wav"
+dest_files=["res://.godot/imported/PIGEON 10.wav-cfcc61c6de1c6172e40e95392bf9f8a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

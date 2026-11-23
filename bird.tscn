@@ -7,4 +7,4 @@
 texture = ExtResource("1_g5k2s")
 script = ExtResource("2_crnqq")
 minHeight = 30.0
-maxHeight = 550.0
+maxHeight = 500.0

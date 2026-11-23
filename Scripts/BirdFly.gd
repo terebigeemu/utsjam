@@ -13,10 +13,10 @@ func _ready() -> void:
 		position = Vector2(-100, spawnHeight)
 		speed = 230
 	else:
-		position = Vector2(1250, spawnHeight)
+		position = Vector2(1060, spawnHeight)
 		speed = -230
 
 func _process(delta: float) -> void:
 	position.x += delta * speed
-	if position.x > 1250 or position.x < -100:
+	if position.x > 1060 or position.x < -100:
 		queue_free()
