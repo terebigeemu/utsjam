@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://mgmknsl4c8dx"]
+
+[ext_resource type="Script" uid="uid://rer47pwe458l" path="res://scripts/test_bird.gd" id="1_ejgwb"]
+[ext_resource type="Script" uid="uid://c53na36pc4gnr" path="res://scripts/bird_test.gd" id="2_73y2r"]
+
+[node name="Node2D" type="Node2D" unique_id=1922979459]
+position = Vector2(-1, -1)
+script = ExtResource("1_ejgwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169822462]
+script = ExtResource("2_73y2r")
