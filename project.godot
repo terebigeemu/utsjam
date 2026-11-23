@@ -35,6 +35,10 @@ launch={
 ]
 }
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/random_timer/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
