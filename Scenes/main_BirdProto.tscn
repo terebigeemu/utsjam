@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oaitn"]
-size = Vector2(619, 248.75)
+size = Vector2(636.5, 634.375)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=829536396]
 script = ExtResource("1_ot0k4")
@@ -68,6 +68,6 @@ autoplay = "default"
 frame_progress = 0.43083736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=168754652]
-position = Vector2(-7, 9)
+position = Vector2(7, 10)
 shape = SubResource("RectangleShape2D_oaitn")
 debug_color = Color(0, 0.5404042, 0.95848256, 0.41960785)
