@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cbtqgnkljtg1w"]
+
+[ext_resource type="Script" uid="uid://b8c10jpkhpmr2" path="res://endScreen.gd" id="1_egc6y"]
+[ext_resource type="Texture2D" uid="uid://b8b1lg3orcmme" path="res://Sprites/endScreenPlaceholder.png" id="2_lt2ag"]
+[ext_resource type="AudioStream" uid="uid://b7ghx2uf6tgly" path="res://330967__deleted_user_2104797__bird-flap-b-05.wav" id="3_lt2ag"]
+[ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_75yvt"]
+
+[node name="EndScreen" type="Node2D" unique_id=340949147]
+script = ExtResource("1_egc6y")
+
+[node name="EndScreenPlaceholder" type="Sprite2D" parent="." unique_id=603907419]
+position = Vector2(583, 324)
+scale = Vector2(2.3147411, 1.9756098)
+texture = ExtResource("2_lt2ag")
+
+[node name="PlayAgainBtn" type="Button" parent="." unique_id=1048817140]
+modulate = Color(1, 1, 1, 0)
+offset_left = 253.0
+offset_top = 376.0
+offset_right = 962.0
+offset_bottom = 602.0
+
+[node name="ScoreBoard" type="Label" parent="." unique_id=354580767]
+offset_left = 68.0
+offset_top = 49.0
+offset_right = 406.0
+offset_bottom = 214.0
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=445194800]
+stream = ExtResource("3_lt2ag")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=135766991]
+stream = ExtResource("4_75yvt")
+autoplay = true
+
+[connection signal="pressed" from="PlayAgainBtn" to="." method="_on_play_again_btn_pressed"]
