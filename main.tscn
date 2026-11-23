@@ -5,6 +5,30 @@
 [ext_resource type="Script" uid="uid://cim3sjeowg583" path="res://scripts/ball.gd" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://os3agvkoylkn" path="res://assets/CannonBallPlaceHolder.png" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://dso7d3l4pu0kt" path="res://Sprites/handThrow/PNGSet/PNG_0001.png" id="5_lswn8"]
+[ext_resource type="Texture2D" uid="uid://de3yj6bgl4wsh" path="res://Sprites/handThrow/PNGSet/PNG_0002.png" id="6_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://cata8xlg3dijs" path="res://Sprites/handThrow/PNGSet/PNG_0003.png" id="7_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://d1hodslwdo6ok" path="res://Sprites/handThrow/PNGSet/PNG_0004.png" id="8_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://cwjho6nxore86" path="res://Sprites/handThrow/PNGSet/PNG_0005.png" id="9_kq58d"]
+[ext_resource type="Texture2D" uid="uid://cb48xhbg47ylb" path="res://Sprites/handThrow/PNGSet/PNG_0006.png" id="10_seu75"]
+[ext_resource type="Texture2D" uid="uid://bgtqx0a6dx2eh" path="res://Sprites/handThrow/PNGSet/PNG_0007.png" id="11_htxhm"]
+[ext_resource type="Texture2D" uid="uid://d1rgmwn648pbk" path="res://Sprites/handThrow/PNGSet/PNG_0008.png" id="12_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://caxdwpthpsqme" path="res://Sprites/handThrow/PNGSet/PNG_0009.png" id="13_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://bkk2jqohw7ce" path="res://Sprites/handThrow/PNGSet/PNG_0010.png" id="14_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://ddbc48fn7nmnn" path="res://Sprites/handThrow/PNGSet/PNG_0011.png" id="15_ok6jj"]
+[ext_resource type="Script" uid="uid://dm1yit8temjax" path="res://hand.gd" id="16_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://kn1x2hl1dmvo" path="res://Sprites/rockThrow/PNGSet/PNG_0001.png" id="16_facbu"]
+[ext_resource type="Texture2D" uid="uid://1gyno8upnfgn" path="res://Sprites/rockThrow/PNGSet/PNG_0002.png" id="17_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://g37nc0dmbnpw" path="res://Sprites/rockThrow/PNGSet/PNG_0003.png" id="18_come4"]
+[ext_resource type="Texture2D" uid="uid://bce0sql3pm1d5" path="res://Sprites/rockThrow/PNGSet/PNG_0004.png" id="19_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://dpxd1kbtyem7o" path="res://Sprites/rockThrow/PNGSet/PNG_0005.png" id="20_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://c2wg6mrkw2kg6" path="res://Sprites/rockThrow/PNGSet/PNG_0006.png" id="21_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://bhee5i1cs237c" path="res://Sprites/rockThrow/PNGSet/PNG_0007.png" id="22_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://bfv80ksxhl8ol" path="res://Sprites/rockThrow/PNGSet/PNG_0008.png" id="23_gngh3"]
+[ext_resource type="Texture2D" uid="uid://jkr8jdpnin44" path="res://Sprites/rockThrow/PNGSet/PNG_0009.png" id="24_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
+[ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 rough = true
@@ -22,6 +46,88 @@ size = Vector2(973.5, 32)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5vw27"]
 friction = 0.75
 bounce = 0.3
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8bke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lswn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a6jrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xuqvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qsp4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kq58d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_seu75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_htxhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jq2sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4k2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0rl1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ok6jj")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7tit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_facbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b1qrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_come4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h8e4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4lmeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0cp0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d2t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gngh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qnost")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wnkbs")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D" unique_id=790340846]
 script = ExtResource("1_1bvp3")
@@ -42,8 +148,8 @@ script = ExtResource("2_h2yge")
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1380613389]
 position = Vector2(0.308815, 0.33576965)
 rotation = 1.5611644
-scale = Vector2(0.06486698, 0.064866975)
-texture = ExtResource("3_1bvp3")
+scale = Vector2(0.33663708, 0.33663705)
+texture = ExtResource("4_a6jrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1053654649]
 position = Vector2(0.7304535, -0.08729553)
@@ -111,3 +217,21 @@ script = ExtResource("5_lquwl")
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+
+[node name="PersonParallax" type="Parallax2D" parent="." unique_id=1514034068]
+scroll_scale = Vector2(0.5, 0)
+scroll_offset = Vector2(-1, 0)
+
+[node name="Hand" type="AnimatedSprite2D" parent="PersonParallax" unique_id=565728059]
+z_index = 3
+position = Vector2(555, 269.00003)
+rotation = 0.0017827663
+scale = Vector2(0.28319618, 0.28319618)
+sprite_frames = SubResource("SpriteFrames_u8bke")
+script = ExtResource("16_a6jrf")
+
+[node name="Rock" type="AnimatedSprite2D" parent="PersonParallax/Hand" unique_id=1262262339]
+sprite_frames = SubResource("SpriteFrames_w7tit")
+
+[connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]
+
