@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bp5n2hn8cepcm"]
+
+[ext_resource type="Texture2D" uid="uid://b1wpcnfxd63w3" path="res://assets/SkyPlaceholder.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dnydbaa4kffsf" path="res://globals.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://cim3sjeowg583" path="res://ball.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://os3agvkoylkn" path="res://assets/CannonBallPlaceHolder.png" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://w5qdy5i8psf7" path="res://ballsprite.gd" id="4_1bvp3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8bke"]
+radius = 21.204441
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7tit"]
+size = Vector2(973.5, 32)
+
+[node name="Main" type="Node2D" unique_id=790340846]
+script = ExtResource("1_lquwl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1946275568]
+position = Vector2(482, 280)
+scale = Vector2(0.7146667, 1.326)
+texture = ExtResource("1_ig7tw")
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
+position = Vector2(476, 511)
+script = ExtResource("2_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1380613389]
+position = Vector2(0.308815, 0.33576965)
+scale = Vector2(0.06486698, 0.064866975)
+texture = ExtResource("3_1bvp3")
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1053654649]
+position = Vector2(0.7304535, -0.08729553)
+shape = SubResource("CircleShape2D_u8bke")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1567297592]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=531042070]
+position = Vector2(476, 549)
+shape = SubResource("RectangleShape2D_w7tit")

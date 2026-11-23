@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l7v55dqglkdj"
-path="res://.godot/imported/USU Clubs logo.png-ecf99893e9bce11d06e0abecea4a5b36.ctex"
+uid="uid://os3agvkoylkn"
+path="res://.godot/imported/CannonBallPlaceHolder.png-0c6971e44b56f72f48ce56d9111e541b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://USU Clubs logo.png"
-dest_files=["res://.godot/imported/USU Clubs logo.png-ecf99893e9bce11d06e0abecea4a5b36.ctex"]
+source_file="res://assets/CannonBallPlaceHolder.png"
+dest_files=["res://.godot/imported/CannonBallPlaceHolder.png-0c6971e44b56f72f48ce56d9111e541b.ctex"]
 
 [params]
 

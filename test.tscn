@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k7htlbdfk67y"]
 
-[ext_resource type="Texture2D" uid="uid://l7v55dqglkdj" path="res://USU Clubs logo.png" id="1_37kl0"]
+[ext_resource type="Texture2D" uid="uid://l7v55dqglkdj" path="res://assets/USU Clubs logo.png" id="1_37kl0"]
 
 [node name="Node2D" type="Node2D" unique_id=1149442894]
 
