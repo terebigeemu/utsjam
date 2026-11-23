@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="utsjam"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="uid://cxw42kcc5vtu8"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/random_timer/plugin.cfg")
 
 [physics]
 
