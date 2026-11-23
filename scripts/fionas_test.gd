@@ -29,7 +29,8 @@ func _draw() -> void:
 	for birdHits in numberOfBirdsHit:
 		timer.start(timer.time_left + 1) #add one second for each backlog of bird hit
 	numberOfBirdsHit = 0 # reset
-		
+
+	######!!!!!!!! if you want to change the max amount of time left do it here
 	if timer.time_left > duration: #if someone hits a bird at 29.5 seconds we don't want to exceed the 30 sec limit
 		timer.start(duration)
 	
