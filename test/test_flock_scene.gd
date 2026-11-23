@@ -3,7 +3,16 @@ extends Node2D
 # Preload your saved bird scene
 var bird_node = preload("res://test/test_bird.tscn")
 
+# Timer Function from Thomas
+
 func _ready():
+	_random_time()
+
+func _random_time():
+	var spawnTime = randf_range(0.3, 2.0)
+	$Timer.start(spawnTime)
+	
+func _on_spawn_timer_timeout() -> void:
 	for i in range(100):
 		var pos := Vector2.from_angle(2*PI*randf())
 		pos *= 100 * randf()
