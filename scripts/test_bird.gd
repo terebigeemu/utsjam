@@ -7,19 +7,20 @@ var sprite_speed : float
 func _ready() -> void:
 	# Start on a random frame (0, 1, 2, or 3)
 	sprite.frame = randi() % sprite.sprite_frames.get_frame_count("flap")
-	# Vary the initial angle of attack
-	var scale : float = 0.18 + 0.2 * randf()
-	sprite.scale = Vector2(scale,scale)
+	# Vary the bird size
+	var resizing : float = 0.16 + 0.1 * randf()
+	sprite.scale = Vector2(resizing,resizing)
 	# original size is 400px
-	sprite.rotate(-0.01 + 0.15 * randf())
+	# Initial Angle of Attack
+	sprite.rotation = (-0.01 + 0.15 * randf())
 	# Slightly vary the flapping and flight speed
-	sprite_speed = 0.5 + randf()
+	sprite_speed = 0.7 * (1 + randf())
 	sprite.play("flap", 1.0 * sprite_speed, false)
 
 func _on_animation_finished() -> void:
 	playing_forward = !playing_forward
 	# raise the angle of attack a bit every flap
-	sprite.rotate(0.02 + 0.15 * randf())
+	sprite.rotate(0.025 + 0.1 * randf())
 	if playing_forward:
 		sprite.play("flap", 4.6 * sprite_speed, false)
 	else:
@@ -34,7 +35,14 @@ func _on_animation_finished() -> void:
 
 func _process(delta: float) -> void:
 	# drop_rate
-	var drop : float = -( sprite.rotation + PI/2 ) / PI * 0.01
-	sprite.rotate(drop)	
-	var translation := Vector2.from_angle(sprite.rotation).normalized()
-	sprite.global_position += translation * - sprite_speed * 100 * delta
+	var drop : float = -((sprite.rotation + PI/2 )/PI)**.7 * 0.015
+	sprite.rotate(drop)
+	if sprite.rotation < - PI/2 or sprite.rotation > PI/2:
+		sprite.rotation = (-0.01 + 0.15 * randf())
+	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
+	sprite.position += translation * - sprite_speed * 100 * delta
+	# Force the bird to fly up if it is crashing into the ground
+	if sprite.global_position.y > 300:
+		sprite.rotate(-drop * 1.2)
+	if sprite.global_position.x > 1260 or position.x < -100:
+		queue_free()
