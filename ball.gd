@@ -8,7 +8,7 @@ func _input(event: InputEvent) -> void:
 	
 	var shoot_dir := global_position.direction_to(get_global_mouse_position())
 	
-	if Input.is_action_just_pressed("launch"):
+	if Input.is_action_just_pressed("launch") and Globals.in_motion == false:
 		apply_central_impulse(shoot_dir * jump_impulse)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
