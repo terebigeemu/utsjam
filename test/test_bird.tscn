@@ -1,11 +1,36 @@
 [gd_scene format=3 uid="uid://mgmknsl4c8dx"]
 
 [ext_resource type="Script" uid="uid://rer47pwe458l" path="res://scripts/test_bird.gd" id="1_ejgwb"]
-[ext_resource type="Script" uid="uid://c53na36pc4gnr" path="res://scripts/bird_test.gd" id="2_73y2r"]
+[ext_resource type="Texture2D" uid="uid://ht6dc4qnvo64" path="res://Sprites/Bird/Pigeon/Bird_01.png" id="2_b0l4q"]
+[ext_resource type="Texture2D" uid="uid://b70ua0r80eynd" path="res://Sprites/Bird/Pigeon/Bird_02.png" id="3_k1aou"]
+[ext_resource type="Texture2D" uid="uid://bbrkwu6hmcgw3" path="res://Sprites/Bird/Pigeon/Bird_03.png" id="4_8mls6"]
+[ext_resource type="Texture2D" uid="uid://gb0y4bpuuf6p" path="res://Sprites/Bird/Pigeon/Bird_04.png" id="5_xxiod"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b0l4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k1aou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8mls6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xxiod")
+}],
+"loop": 2,
+"name": &"flap",
+"speed": 10.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=1922979459]
 position = Vector2(-1, -1)
 script = ExtResource("1_ejgwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169822462]
-script = ExtResource("2_73y2r")
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_s3r25")
+animation = &"flap"
