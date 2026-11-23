@@ -6,17 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://os3agvkoylkn" path="res://assets/CannonBallPlaceHolder.png" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
-[ext_resource type="Texture2D" uid="uid://dso7d3l4pu0kt" path="res://Sprites/handThrow/PNGSet/PNG_0001.png" id="5_lswn8"]
-[ext_resource type="Texture2D" uid="uid://de3yj6bgl4wsh" path="res://Sprites/handThrow/PNGSet/PNG_0002.png" id="6_a6jrf"]
-[ext_resource type="Texture2D" uid="uid://cata8xlg3dijs" path="res://Sprites/handThrow/PNGSet/PNG_0003.png" id="7_xuqvo"]
-[ext_resource type="Texture2D" uid="uid://d1hodslwdo6ok" path="res://Sprites/handThrow/PNGSet/PNG_0004.png" id="8_qsp4k"]
-[ext_resource type="Texture2D" uid="uid://cwjho6nxore86" path="res://Sprites/handThrow/PNGSet/PNG_0005.png" id="9_kq58d"]
-[ext_resource type="Texture2D" uid="uid://cb48xhbg47ylb" path="res://Sprites/handThrow/PNGSet/PNG_0006.png" id="10_seu75"]
-[ext_resource type="Texture2D" uid="uid://bgtqx0a6dx2eh" path="res://Sprites/handThrow/PNGSet/PNG_0007.png" id="11_htxhm"]
-[ext_resource type="Texture2D" uid="uid://d1rgmwn648pbk" path="res://Sprites/handThrow/PNGSet/PNG_0008.png" id="12_jq2sk"]
-[ext_resource type="Texture2D" uid="uid://caxdwpthpsqme" path="res://Sprites/handThrow/PNGSet/PNG_0009.png" id="13_4k2k6"]
-[ext_resource type="Texture2D" uid="uid://bkk2jqohw7ce" path="res://Sprites/handThrow/PNGSet/PNG_0010.png" id="14_0rl1p"]
-[ext_resource type="Texture2D" uid="uid://ddbc48fn7nmnn" path="res://Sprites/handThrow/PNGSet/PNG_0011.png" id="15_ok6jj"]
+[ext_resource type="Texture2D" uid="uid://tik1yxuxuig0" path="res://Sprites/handThrowNew/PNGSet/PNG_0001.png" id="5_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://dadlptj0be55j" path="res://Sprites/handThrowNew/PNGSet/PNG_0002.png" id="6_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://bpn65n1hnonii" path="res://Sprites/handThrowNew/PNGSet/PNG_0003.png" id="7_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://dj7lxn1gyksi0" path="res://Sprites/handThrowNew/PNGSet/PNG_0004.png" id="8_kq58d"]
+[ext_resource type="Texture2D" uid="uid://buq1e7m5sngde" path="res://Sprites/handThrowNew/PNGSet/PNG_0005.png" id="9_seu75"]
+[ext_resource type="Texture2D" uid="uid://cwx6delo4yecn" path="res://Sprites/handThrowNew/PNGSet/PNG_0006.png" id="10_htxhm"]
+[ext_resource type="Texture2D" uid="uid://c7okd5muissc7" path="res://Sprites/handThrowNew/PNGSet/PNG_0007.png" id="11_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://bulg2sv8rrd7n" path="res://Sprites/handThrowNew/PNGSet/PNG_0008.png" id="12_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://cfnqwasnkvgq1" path="res://Sprites/handThrowNew/PNGSet/PNG_0009.png" id="13_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://dwp7ik5eunm3t" path="res://Sprites/handThrowNew/PNGSet/PNG_0010.png" id="14_ok6jj"]
+[ext_resource type="Texture2D" uid="uid://b8n6tunxv3j4v" path="res://Sprites/handThrowNew/PNGSet/PNG_0011.png" id="15_facbu"]
 [ext_resource type="Script" uid="uid://dm1yit8temjax" path="res://hand.gd" id="16_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://kn1x2hl1dmvo" path="res://Sprites/rockThrow/PNGSet/PNG_0001.png" id="16_facbu"]
 [ext_resource type="Texture2D" uid="uid://1gyno8upnfgn" path="res://Sprites/rockThrow/PNGSet/PNG_0002.png" id="17_b1qrp"]
@@ -51,37 +51,37 @@ bounce = 0.3
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_lswn8")
+"texture": ExtResource("5_a6jrf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_a6jrf")
+"texture": ExtResource("6_xuqvo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xuqvo")
+"texture": ExtResource("7_qsp4k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_qsp4k")
+"texture": ExtResource("8_kq58d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_kq58d")
+"texture": ExtResource("9_seu75")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_seu75")
+"texture": ExtResource("10_htxhm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_htxhm")
+"texture": ExtResource("11_jq2sk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_jq2sk")
+"texture": ExtResource("12_4k2k6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_4k2k6")
+"texture": ExtResource("13_0rl1p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_0rl1p")
+"texture": ExtResource("14_ok6jj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_ok6jj")
+"texture": ExtResource("15_facbu")
 }],
 "loop": 0,
 "name": &"default",
@@ -139,6 +139,7 @@ texture = ExtResource("1_ig7tw")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
 position = Vector2(477, 511)
+scale = Vector2(0.1494701, 0.1494701)
 physics_material_override = SubResource("PhysicsMaterial_lquwl")
 contact_monitor = true
 max_contacts_reported = 1
@@ -148,7 +149,7 @@ script = ExtResource("2_h2yge")
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1380613389]
 position = Vector2(0.308815, 0.33576965)
 rotation = 1.5611644
-scale = Vector2(0.33663708, 0.33663705)
+scale = Vector2(0.149, 0.149)
 texture = ExtResource("4_a6jrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1053654649]
@@ -219,18 +220,21 @@ script = ExtResource("5_lquwl")
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 
 [node name="PersonParallax" type="Parallax2D" parent="." unique_id=1514034068]
+scale = Vector2(0.7846093, 0.7846093)
 scroll_scale = Vector2(0.5, 0)
-scroll_offset = Vector2(-1, 0)
+scroll_offset = Vector2(289, -6)
 
 [node name="Hand" type="AnimatedSprite2D" parent="PersonParallax" unique_id=565728059]
 z_index = 3
-position = Vector2(555, 269.00003)
+position = Vector2(545.4944, 386.17944)
 rotation = 0.0017827663
-scale = Vector2(0.28319618, 0.28319618)
+scale = Vector2(0.32235613, 0.32235613)
 sprite_frames = SubResource("SpriteFrames_u8bke")
 script = ExtResource("16_a6jrf")
 
 [node name="Rock" type="AnimatedSprite2D" parent="PersonParallax/Hand" unique_id=1262262339]
+position = Vector2(-1502.7738, 218.70258)
+scale = Vector2(0.7108116, 0.7108116)
 sprite_frames = SubResource("SpriteFrames_w7tit")
 
 [connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]
