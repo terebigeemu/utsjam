@@ -8,7 +8,6 @@ extends Node2D
 
 
 @onready var timer: Timer = $Timer
-@onready var intInput: SpinBox = $SpinBox
 
 func _ready() -> void:
 	timer.wait_time = duration # set uo the initial timer time
