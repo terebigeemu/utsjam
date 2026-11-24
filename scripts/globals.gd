@@ -13,3 +13,4 @@ var in_throw: bool = false
 var touched_ground: bool = false
 
 var multiplier: int = 0
+var canSee: bool = false

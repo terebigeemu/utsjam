@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://tik1yxuxuig0" path="res://Sprites/handThrowNew/PNGSet/PNG_0001.png" id="5_a6jrf"]
 [ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://ca7ani3xw6qjj" path="res://ground_area.gd" id="5_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dadlptj0be55j" path="res://Sprites/handThrowNew/PNGSet/PNG_0002.png" id="6_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://bpn65n1hnonii" path="res://Sprites/handThrowNew/PNGSet/PNG_0003.png" id="7_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dj7lxn1gyksi0" path="res://Sprites/handThrowNew/PNGSet/PNG_0004.png" id="8_kq58d"]
@@ -23,22 +22,29 @@
 [ext_resource type="Texture2D" uid="uid://1gyno8upnfgn" path="res://Sprites/rockThrow/PNGSet/PNG_0002.png" id="17_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://g37nc0dmbnpw" path="res://Sprites/rockThrow/PNGSet/PNG_0003.png" id="18_come4"]
 [ext_resource type="Texture2D" uid="uid://bce0sql3pm1d5" path="res://Sprites/rockThrow/PNGSet/PNG_0004.png" id="19_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://dpxd1kbtyem7o" path="res://Sprites/rockThrow/PNGSet/PNG_0005.png" id="20_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://c2wg6mrkw2kg6" path="res://Sprites/rockThrow/PNGSet/PNG_0006.png" id="21_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://bhee5i1cs237c" path="res://Sprites/rockThrow/PNGSet/PNG_0007.png" id="22_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://bfv80ksxhl8ol" path="res://Sprites/rockThrow/PNGSet/PNG_0008.png" id="23_gngh3"]
+[ext_resource type="Texture2D" uid="uid://jkr8jdpnin44" path="res://Sprites/rockThrow/PNGSet/PNG_0009.png" id="24_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
+[ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
+[ext_resource type="Script" uid="uid://c7ckrx1jlb2hq" path="res://multiplier.gd" id="29_qsp4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.5
 rough = true
-bounce = 1.0
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8bke"]
 radius = 21.204441
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7mycd"]
+friction = 0.75
+bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7tit"]
 size = Vector2(973.5, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8bke"]
-size = Vector2(92.310104, 1.5020142)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5vw27"]
 friction = 0.75
@@ -80,9 +86,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_facbu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w7tit"]
@@ -101,45 +107,86 @@ animations = [{
 "texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("20_4lmeg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("21_0cp0l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("22_d2t1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("23_gngh3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("24_0n3wm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("25_qnost")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_h8e4i")
+"texture": ExtResource("26_wnkbs")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
-"speed": 20.0
+"speed": 10.0
 }]
+
+[sub_resource type="FontVariation" id="FontVariation_qsp4k"]
+variation_embolden = 1.02
+variation_transform = Transform2D(1, 0.3, 0, 1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_qsp4k"]
+resource_name = "Fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334, 0.96666664, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kq58d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seu75"]
+_data = {
+&"Fade": SubResource("Animation_qsp4k"),
+&"RESET": SubResource("Animation_kq58d")
+}
 
 [node name="Main" type="Node2D" unique_id=790340846]
 script = ExtResource("1_d13ii")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1946275568]
 position = Vector2(482, 280)
-scale = Vector2(1.3243454, 1.34588)
+scale = Vector2(0.7146667, 1.326)
 texture = ExtResource("1_ig7tw")
 
 [node name="Flock" type="Node2D" parent="." unique_id=1270838118]
 script = ExtResource("3_xuqvo")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
-position = Vector2(483, -44.000004)
-scale = Vector2(0.37760296, 0.37760296)
+position = Vector2(481.99997, 171)
+scale = Vector2(0.1494701, 0.1494701)
 physics_material_override = SubResource("PhysicsMaterial_lquwl")
 contact_monitor = true
 max_contacts_reported = 1
@@ -168,17 +215,8 @@ position = Vector2(476, 550)
 scale = Vector2(1.0800074, 1)
 shape = SubResource("RectangleShape2D_w7tit")
 
-[node name="GroundDetector" type="Area2D" parent="GroundArea" unique_id=563627552]
-position = Vector2(3, 0)
-script = ExtResource("5_qsp4k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundArea/GroundDetector" unique_id=1670195187]
-position = Vector2(480.00003, 528)
-scale = Vector2(10.421394, 4.6603837)
-shape = SubResource("RectangleShape2D_u8bke")
-
 [node name="CelingArea" type="Area2D" parent="." unique_id=1181956362]
-position = Vector2(-52.999996, -577.00006)
+position = Vector2(-53, -562)
 scale = Vector2(1.1369987, 0.9965369)
 
 [node name="CeilingStaticBody" type="StaticBody2D" parent="CelingArea" unique_id=361955306]
@@ -229,7 +267,7 @@ script = ExtResource("5_lquwl")
 [node name="PersonParallax" type="Parallax2D" parent="." unique_id=1514034068]
 scale = Vector2(0.7846093, 0.7846093)
 scroll_scale = Vector2(0.5, 0)
-scroll_offset = Vector2(533, -4)
+scroll_offset = Vector2(289, -6)
 
 [node name="Hand" type="AnimatedSprite2D" parent="PersonParallax" unique_id=565728059]
 z_index = 3
@@ -244,7 +282,20 @@ position = Vector2(-1502.7738, 218.70258)
 scale = Vector2(0.7108116, 0.7108116)
 sprite_frames = SubResource("SpriteFrames_w7tit")
 
+[node name="Multiplier" type="Label" parent="." unique_id=1047634982]
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 161.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_qsp4k")
+theme_override_font_sizes/font_size = 70
+script = ExtResource("29_qsp4k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplier" unique_id=1689954653]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_seu75")
+
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
-[connection signal="body_entered" from="GroundArea/GroundDetector" to="GroundArea/GroundDetector" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]
