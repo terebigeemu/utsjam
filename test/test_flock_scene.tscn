@@ -4,3 +4,7 @@
 
 [node name="Node2D" type="Node2D" unique_id=1137642884]
 script = ExtResource("1_g7st6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1247918653]
+
+[connection signal="timeout" from="Timer" to="." method="_on_spawn_timer_timeout"]

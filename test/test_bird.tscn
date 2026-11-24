@@ -26,12 +26,21 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_72jeb"]
+
 [node name="Node2D" type="Node2D" unique_id=1922979459]
 position = Vector2(-1, -1)
 script = ExtResource("1_ejgwb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169822462]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1973706082]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D" unique_id=1169822462]
 sprite_frames = SubResource("SpriteFrames_s3r25")
 animation = &"flap"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1758691481]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_72jeb")
+
+[connection signal="animation_finished" from="RigidBody2D/AnimatedSprite2D" to="." method="_on_animation_finished"]
