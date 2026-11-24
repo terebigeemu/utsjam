@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bqh8kg6uwpaev"]
 
-[ext_resource type="Script" uid="uid://d2pbxa7iqf7ln" path="res://fionas_test.gd" id="1_jfjje"]
-[ext_resource type="Script" uid="uid://dbgun2hkegd41" path="res://timer.gd" id="2_odwix"]
-[ext_resource type="Script" uid="uid://sihy81ryki0k" path="res://spin_box.gd" id="3_67k4n"]
+[ext_resource type="Script" uid="uid://d2pbxa7iqf7ln" path="res://scripts/fionas_test.gd" id="1_jfjje"]
+[ext_resource type="Script" uid="uid://dbgun2hkegd41" path="res://scripts/timer.gd" id="2_odwix"]
+[ext_resource type="Script" uid="uid://sihy81ryki0k" path="res://scripts/spin_box.gd" id="3_67k4n"]
 
 [node name="FionasTest" type="Node2D" unique_id=1072267818]
 script = ExtResource("1_jfjje")

@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bbrkwu6hmcgw3" path="res://Sprites/Bird/Pigeon/Bird_03.png" id="4_8mls6"]
 [ext_resource type="Texture2D" uid="uid://gb0y4bpuuf6p" path="res://Sprites/Bird/Pigeon/Bird_04.png" id="5_xxiod"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xuqvo"]
+friction = 0.0
+bounce = 0.5
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
 "frames": [{

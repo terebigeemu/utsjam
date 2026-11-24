@@ -27,8 +27,8 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	
-	if Globals.in_motion == false:
-		look_at(get_global_mouse_position())		
+	#if Globals.in_motion == false:
+	#	look_at(get_global_mouse_position())		
 	
 	if (linear_velocity.length_squared() > movement_threshold) or (angular_velocity > movement_threshold):
 		Globals.in_motion = true
@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 		Globals.in_motion = false
 		
 func _on_throw_finished() -> void:
+	self.sleeping = false
 	should_teleport = true
 	
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:

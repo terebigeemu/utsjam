@@ -29,7 +29,6 @@ window/dpi/allow_hidpi=false
 
 [editor_plugins]
 
-
 enabled=PackedStringArray("res://addons/random_timer/plugin.cfg")
 
 [input]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxw42kcc5vtu8"]
 
-[ext_resource type="Script" uid="uid://bx7uyi0cx4q3a" path="res://Scripts/Timers.gd" id="1_mlf6e"]
+[ext_resource type="Script" uid="uid://bx7uyi0cx4q3a" path="res://scripts/Timers.gd" id="1_mlf6e"]
 
 [node name="GameScene" type="Node2D" unique_id=235938173]
 script = ExtResource("1_mlf6e")
