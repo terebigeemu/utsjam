@@ -47,6 +47,7 @@ func _on_bird_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_
 	fall *+ - sprite_speed * 100
 	sprite.animation = "dead" 
 	sprite.stop()   
+	hitbox.set_deferred("disabled", true)
 
 #	Notes on flight
 # Flight is determined by its pitch attitude 
