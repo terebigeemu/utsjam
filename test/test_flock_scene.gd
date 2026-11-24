@@ -7,13 +7,14 @@ var bird_node = preload("res://test/test_bird.tscn")
 
 func _ready():
 	#pigeon_spawn()
-	_random_time()
+	$Timer.start(0.2)
 
 func _random_time():
 	var spawnTime = randf_range(3.0, 7.0)
 	$Timer.start(spawnTime)
 	
 func _on_spawn_timer_timeout() -> void:
+	_random_time()
 	pigeon_spawn()
 # Modified Loop from Leo
 func pigeon_spawn():

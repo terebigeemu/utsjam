@@ -13,6 +13,11 @@ absorbent = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_b0l4q")
@@ -42,10 +47,15 @@ physics_material_override = SubResource("PhysicsMaterial_xuqvo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1169822462]
 sprite_frames = SubResource("SpriteFrames_s3r25")
-animation = &"flap"
+animation = &"dead"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1758691481]
-scale = Vector2(8, 8)
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D" unique_id=1142619322]
+scale = Vector2(100, 100)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D" unique_id=1758691481]
+scale = Vector2(0.08, 0.08)
 shape = SubResource("CircleShape2D_72jeb")
 
 [connection signal="animation_finished" from="AnimatableBody2D/AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="body_shape_entered" from="AnimatableBody2D/Area2D" to="." method="_on_bird_entered"]
