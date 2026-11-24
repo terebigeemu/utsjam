@@ -56,7 +56,7 @@ var a : int = 0
 func _process(delta: float) -> void:
 	if living:
 		# drop_rate
-		var drop : float = -((sprite.rotation + PI/2 )/PI)**.7 * 0.01
+		var drop : float = -((sprite.rotation + PI/2 )/PI)**.7 * 0.015
 		sprite.rotate(drop)
 		if sprite.rotation < - PI/2 or sprite.rotation > PI/2:
 			sprite.rotation = (-0.01 + 0.15 * randf())
@@ -67,10 +67,14 @@ func _process(delta: float) -> void:
 		# Force the bird to fly up if it is crashing into the ground
 		if sprite.global_position.y > 350:
 			sprite.rotate(-drop * 1.5)
+		if sprite.global_position.y < 150:
+			sprite.rotate(drop*1.5)
 		if sprite.global_position.x > 1360 or position.x < -200:
 			queue_free()
 
 	else:   
 		a += 1
+		fall += Vector2(0,3)
+		physics.position += fall
 		if a > 10:
 			queue_free()
