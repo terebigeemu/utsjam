@@ -1,8 +1,9 @@
 extends Node2D
 # Written by Leo
 @onready var sprite = get_node("AnimatableBody2D/AnimatedSprite2D")
-@onready var collision_shape = get_node("AnimatableBody2D/Area2D")
+@onready var collision_shape = get_node("AnimatableBody2D/Area2D/Shape Form")
 @onready var physics = get_node("AnimatableBody2D")
+@onready var hitbox = get_node("AnimatableBody2D/CollisionPhysics")
 var living := true
 var playing_forward := true
 var sprite_speed : float
@@ -17,12 +18,14 @@ func _ready() -> void:
 	resizing *= 1.3
 	sprite.scale = Vector2(resizing,resizing)
 	collision_shape.scale = Vector2(resizing,resizing)
+	hitbox.scale = Vector2(resizing,resizing)
 	# original size is 400px
 	# Initial Angle of Attack
 	sprite.rotation = (-0.01 + 0.15 * randf())
 	# Slightly vary the flapping and flight speed
 	sprite_speed = 0.9 * (1 + randf())
 	sprite.play("flap", 1.0 * sprite_speed, false)
+	
 
 func _on_animation_finished() -> void:
 	playing_forward = !playing_forward
@@ -36,15 +39,20 @@ func _on_animation_finished() -> void:
 		sprite.play("flap", -1.0 * sprite_speed, true)
 
 func _on_bird_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("Triggered by: ", body.name)
+	if body == physics:
+		return
 	living = false
 	fall = Vector2.from_angle(sprite.rotation - 0.226)
 	fall *+ - sprite_speed * 100
-	collision_shape.get_node("CollisionShape2D").set_deferred("disabled", true)
+	#collision_shape.get_node("CollisionShape2D").set_deferred("disabled", true)
+	sprite.animation = "dead" 
+	sprite.stop()   
 #	Notes on flight
 # Flight is determined by its pitch attitude 
 # (angle between AOA and trajectory)
 # For pigeons, this is about 13 degrees (0.226 rad)
-
+var a : int = 0
 func _process(delta: float) -> void:
 	if living:
 		# drop_rate
@@ -54,13 +62,14 @@ func _process(delta: float) -> void:
 			sprite.rotation = (-0.01 + 0.15 * randf())
 		var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
 		physics.position += translation * - sprite_speed * 100 * delta
-		#sprite.position += translation * - sprite_speed * 100 * delta
+		
 		#collision_shape.position += translation * - sprite_speed * 100 * delta
 		# Force the bird to fly up if it is crashing into the ground
 		if sprite.global_position.y > 350:
 			sprite.rotate(-drop * 1.5)
 		if sprite.global_position.x > 1360 or position.x < -200:
 			queue_free()
-	else:
-		sprite.animation = "dead" 
-		sprite.stop()       
+	else:   
+		a += 1
+		if a > 10:
+			queue_free()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rer47pwe458l" path="res://scripts/test_bird.gd" id="1_ejgwb"]
 [ext_resource type="Texture2D" uid="uid://ht6dc4qnvo64" path="res://Sprites/Bird/Pigeon/Bird_01.png" id="2_b0l4q"]
+[ext_resource type="Texture2D" uid="uid://syin1khqgqsy" path="res://Sprites/Bird/Pigeon/Bird_0.png" id="2_k1aou"]
 [ext_resource type="Texture2D" uid="uid://b70ua0r80eynd" path="res://Sprites/Bird/Pigeon/Bird_02.png" id="3_k1aou"]
 [ext_resource type="Texture2D" uid="uid://bbrkwu6hmcgw3" path="res://Sprites/Bird/Pigeon/Bird_03.png" id="4_8mls6"]
 [ext_resource type="Texture2D" uid="uid://gb0y4bpuuf6p" path="res://Sprites/Bird/Pigeon/Bird_04.png" id="5_xxiod"]
@@ -10,9 +11,15 @@
 friction = 0.0
 bounce = 1.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_72jeb"]
+radius = 101.0198
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k1aou")
+}],
 "loop": 1,
 "name": &"dead",
 "speed": 5.0
@@ -35,8 +42,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_72jeb"]
-radius = 11.966709
+[sub_resource type="CircleShape2D" id="CircleShape2D_wis52"]
+radius = 1.0200481
 
 [node name="Node2D2" type="Node2D" unique_id=1922979459]
 position = Vector2(-1, -1)
@@ -44,19 +51,26 @@ script = ExtResource("1_ejgwb")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1983407413]
 scale = Vector2(1, 1.0084366)
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_xuqvo")
+
+[node name="CollisionPhysics" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1758691481]
+scale = Vector2(1, 0.991634)
+shape = SubResource("CircleShape2D_72jeb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1169822462]
 sprite_frames = SubResource("SpriteFrames_s3r25")
 animation = &"dead"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1758691481]
-scale = Vector2(2.6429439, 2.6429439)
-shape = SubResource("CircleShape2D_72jeb")
-
 [node name="Area2D" type="Area2D" parent="AnimatableBody2D" unique_id=1142619322]
 scale = Vector2(100, 100)
+disable_mode = 1
+collision_mask = 2
+input_pickable = false
 monitorable = false
+
+[node name="Shape Form" type="CollisionShape2D" parent="AnimatableBody2D/Area2D" unique_id=936890842]
+shape = SubResource("CircleShape2D_wis52")
 
 [connection signal="animation_finished" from="AnimatableBody2D/AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_shape_entered" from="AnimatableBody2D/Area2D" to="." method="_on_bird_entered"]
