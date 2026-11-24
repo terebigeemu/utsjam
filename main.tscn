@@ -192,6 +192,7 @@ script = ExtResource("3_xuqvo")
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
 position = Vector2(481.99997, 171)
 scale = Vector2(0.1494701, 0.1494701)
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_lquwl")
 contact_monitor = true
 max_contacts_reported = 1
