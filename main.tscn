@@ -30,7 +30,8 @@ scale = Vector2(0.7146667, 1.326)
 texture = ExtResource("1_ig7tw")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
-position = Vector2(477, 511)
+position = Vector2(478, -42)
+scale = Vector2(0.1494701, 0.1494701)
 physics_material_override = SubResource("PhysicsMaterial_lquwl")
 contact_monitor = true
 max_contacts_reported = 1
