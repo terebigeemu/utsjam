@@ -24,7 +24,6 @@ func pigeon_spawn(pos):
 #	# randomly give them the diff stuff
 	
 	if randf() < 0.5:
-		#instance.get_node("AnimatedSprite2D").flip_h = true
 		instance.scale.x = -1
 		# very naughty practice
 		instance.position = pos - Vector2(100,0)
