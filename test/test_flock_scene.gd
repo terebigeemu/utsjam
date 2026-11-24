@@ -6,7 +6,7 @@ var bird_node = preload("res://test/test_bird.tscn")
 # Timer Function from Thomas
 
 func _ready():
-	pigeon_spawn()
+	#pigeon_spawn()
 	_random_time()
 
 func _random_time():
@@ -18,7 +18,7 @@ func _on_spawn_timer_timeout() -> void:
 # Modified Loop from Leo
 func pigeon_spawn():
 	var dir := bool(randi() % 2)
-	for i in range(20):
+	for i in range(2):
 		var instance = bird_node.instantiate()
 		var pos := Vector2.from_angle(2*PI*randf())
 		pos *= 100 * randf()

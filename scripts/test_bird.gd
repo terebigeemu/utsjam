@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	if sprite.rotation < - PI/2 or sprite.rotation > PI/2:
 		sprite.rotation = (-0.01 + 0.15 * randf())
 	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
-	physics.position += translation * - sprite_speed * 500 * delta
+	physics.position += translation * - sprite_speed * 100 * delta
 	sprite.position += translation * - sprite_speed * 100 * delta
 	collision_shape.position += translation * - sprite_speed * 100 * delta
 	# Force the bird to fly up if it is crashing into the ground

@@ -194,7 +194,7 @@ scale = Vector2(0.7191182, 1.0001633)
 physics_material_override = SubResource("PhysicsMaterial_5vw27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall/LeftWallStaticBody" unique_id=585325422]
-position = Vector2(476, 550)
+position = Vector2(1479.8937, 563.3868)
 scale = Vector2(1.0800074, 1)
 shape = SubResource("RectangleShape2D_w7tit")
 
