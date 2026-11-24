@@ -45,13 +45,9 @@ func _on_bird_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_
 	living = false
 	fall = Vector2.from_angle(sprite.rotation - 0.226)
 	fall *+ - sprite_speed * 100
-<<<<<<< HEAD
-	#collision_shape.get_node("CollisionShape2D").set_deferred("disabled", true)
 	sprite.animation = "dead" 
 	sprite.stop()   
-=======
-	physics.get_node("CollisionShape2D").set_deferred("disabled", true)
->>>>>>> 9ded3e4440dfae9c256db5427c5c07bd64e46f28
+
 #	Notes on flight
 # Flight is determined by its pitch attitude 
 # (angle between AOA and trajectory)
@@ -73,18 +69,8 @@ func _process(delta: float) -> void:
 			sprite.rotate(-drop * 1.5)
 		if sprite.global_position.x > 1360 or position.x < -200:
 			queue_free()
-<<<<<<< HEAD
+
 	else:   
 		a += 1
 		if a > 10:
 			queue_free()
-=======
-	else:
-		sprite.animation = "dead" 
-		sprite.stop()   
-		queue_free()
-
-
-func _on_detector_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	pass # Replace with function body.
->>>>>>> 9ded3e4440dfae9c256db5427c5c07bd64e46f28
