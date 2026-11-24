@@ -12,6 +12,7 @@ func _ready() -> void:
 	sprite.frame = randi() % sprite.sprite_frames.get_frame_count("flap")
 	# Vary the bird size
 	var resizing : float = 0.16 + 0.1 * randf()
+	resizing *= 1.3
 	sprite.scale = Vector2(resizing,resizing)
 	collision_shape.scale = Vector2(resizing*5,resizing*5)
 	# original size is 400px
@@ -44,7 +45,7 @@ func _process(delta: float) -> void:
 	if sprite.rotation < - PI/2 or sprite.rotation > PI/2:
 		sprite.rotation = (-0.01 + 0.15 * randf())
 	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
-	physics.position += translation * - sprite_speed * 300 * delta
+	physics.position += translation * - sprite_speed * 500 * delta
 	#physics.position = sprite.position
 	# Force the bird to fly up if it is crashing into the ground
 	if sprite.global_position.y > 350:
