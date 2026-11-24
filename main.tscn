@@ -30,9 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
 [ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
 [ext_resource type="Script" uid="uid://c7ckrx1jlb2hq" path="res://multiplier.gd" id="29_qsp4k"]
+[ext_resource type="Script" uid="uid://wcrc1ekv1ypv" path="res://timer.gd" id="23_d13ii"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
-friction = 0.5
+friction = 0.3
 rough = true
 bounce = 0.5
 
@@ -295,6 +296,8 @@ script = ExtResource("29_qsp4k")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplier" unique_id=1689954653]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_seu75")
+[node name="Timer" type="Node2D" parent="." unique_id=820777360]
+script = ExtResource("23_d13ii")
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
