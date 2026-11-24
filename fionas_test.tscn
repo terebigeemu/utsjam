@@ -11,6 +11,7 @@ script = ExtResource("1_jfjje")
 script = ExtResource("2_odwix")
 
 [node name="SpinBox" type="SpinBox" parent="." unique_id=783317453]
+visible = false
 offset_left = 119.0
 offset_top = 170.0
 offset_right = 342.0
@@ -19,6 +20,7 @@ max_value = 5.0
 script = ExtResource("3_67k4n")
 
 [node name="Button" type="Button" parent="SpinBox" unique_id=1357652403]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.555

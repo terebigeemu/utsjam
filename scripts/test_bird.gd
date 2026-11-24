@@ -16,12 +16,12 @@ func _ready() -> void:
 	var resizing : float = 0.16 + 0.1 * randf()
 	resizing *= 1.3
 	sprite.scale = Vector2(resizing,resizing)
-	collision_shape.scale = Vector2(resizing*9,resizing*9)
+	collision_shape.scale = Vector2(resizing,resizing)
 	# original size is 400px
 	# Initial Angle of Attack
 	sprite.rotation = (-0.01 + 0.15 * randf())
 	# Slightly vary the flapping and flight speed
-	sprite_speed = 0.7 * (1 + randf())
+	sprite_speed = 0.9 * (1 + randf())
 	sprite.play("flap", 1.0 * sprite_speed, false)
 
 func _on_animation_finished() -> void:
@@ -54,8 +54,8 @@ func _process(delta: float) -> void:
 			sprite.rotation = (-0.01 + 0.15 * randf())
 		var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
 		physics.position += translation * - sprite_speed * 100 * delta
-		sprite.position += translation * - sprite_speed * 100 * delta
-		collision_shape.position += translation * - sprite_speed * 100 * delta
+		#sprite.position += translation * - sprite_speed * 100 * delta
+		#collision_shape.position += translation * - sprite_speed * 100 * delta
 		# Force the bird to fly up if it is crashing into the ground
 		if sprite.global_position.y > 350:
 			sprite.rotate(-drop * 1.5)

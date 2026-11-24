@@ -23,4 +23,4 @@ func _process(delta: float) -> void:
 func _on_play_again_btn_pressed() -> void:
 	buttonAudio.play() 
 	await buttonAudio.finished
-	get_tree().change_scene_to_file("res://fionas_test.tscn") ###!!!! replace w/ the actual game scene HERE
+	get_tree().change_scene_to_file("res://main.tscn") ###!!!! replace w/ the actual game scene HERE
