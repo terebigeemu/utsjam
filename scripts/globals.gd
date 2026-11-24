@@ -9,3 +9,5 @@ signal throw_finished()
 
 var in_motion: bool = false
 var in_throw: bool = false
+
+var multiplier: int = 0

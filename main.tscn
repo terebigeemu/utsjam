@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://bx7uyi0cx4q3a" path="res://scripts/Timers.gd" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://b1wpcnfxd63w3" path="res://assets/SkyPlaceholder.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cim3sjeowg583" path="res://scripts/ball.gd" id="2_h2yge"]
-[ext_resource type="Texture2D" uid="uid://os3agvkoylkn" path="res://assets/CannonBallPlaceHolder.png" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://bh31ufwlgpxqa" path="res://scripts/main_flock.gd" id="3_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://tik1yxuxuig0" path="res://Sprites/handThrowNew/PNGSet/PNG_0001.png" id="5_a6jrf"]
+[ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dadlptj0be55j" path="res://Sprites/handThrowNew/PNGSet/PNG_0002.png" id="6_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://bpn65n1hnonii" path="res://Sprites/handThrowNew/PNGSet/PNG_0003.png" id="7_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dj7lxn1gyksi0" path="res://Sprites/handThrowNew/PNGSet/PNG_0004.png" id="8_kq58d"]
@@ -223,10 +222,6 @@ theme_override_colors/font_color = Color(1, 0.18431373, 0, 1)
 theme_override_font_sizes/font_size = 50
 script = ExtResource("5_lquwl")
 
-[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-
->>>>>>> ae835e6 (Uhhhh)
 [node name="PersonParallax" type="Parallax2D" parent="." unique_id=1514034068]
 scale = Vector2(0.7846093, 0.7846093)
 scroll_scale = Vector2(0.5, 0)
@@ -245,5 +240,6 @@ position = Vector2(-1502.7738, 218.70258)
 scale = Vector2(0.7108116, 0.7108116)
 sprite_frames = SubResource("SpriteFrames_w7tit")
 
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]
