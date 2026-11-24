@@ -1,15 +1,19 @@
 extends Node2D
 # Written by Leo
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite = get_node("RigidBody2D/AnimatedSprite2D")
+@onready var collision_shape = get_node("RigidBody2D/CollisionShape2D")
+@onready var physics = get_node("RigidBody2D")
 var playing_forward := true
 var sprite_speed : float
 #var AngofAtk : float
 func _ready() -> void:
 	# Start on a random frame (0, 1, 2, or 3)
+	
 	sprite.frame = randi() % sprite.sprite_frames.get_frame_count("flap")
 	# Vary the bird size
 	var resizing : float = 0.16 + 0.1 * randf()
 	sprite.scale = Vector2(resizing,resizing)
+	collision_shape.scale = Vector2(resizing,resizing)
 	# original size is 400px
 	# Initial Angle of Attack
 	sprite.rotation = (-0.01 + 0.15 * randf())
@@ -41,8 +45,9 @@ func _process(delta: float) -> void:
 		sprite.rotation = (-0.01 + 0.15 * randf())
 	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
 	sprite.position += translation * - sprite_speed * 100 * delta
+	collision_shape.position = sprite.position
 	# Force the bird to fly up if it is crashing into the ground
 	if sprite.global_position.y > 300:
 		sprite.rotate(-drop * 1.2)
-	if sprite.global_position.x > 1260 or position.x < -100:
+	if sprite.global_position.x > 1360 or position.x < -200:
 		queue_free()
