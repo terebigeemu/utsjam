@@ -11,3 +11,4 @@ var in_motion: bool = false
 var in_throw: bool = false
 
 var multiplier: int = 0
+var canSee: bool = false

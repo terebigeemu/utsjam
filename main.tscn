@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://jkr8jdpnin44" path="res://Sprites/rockThrow/PNGSet/PNG_0009.png" id="24_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
 [ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
+[ext_resource type="Script" uid="uid://c7ckrx1jlb2hq" path="res://multiplier.gd" id="29_qsp4k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.5
@@ -84,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_facbu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
@@ -125,10 +126,51 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_wnkbs")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="FontVariation" id="FontVariation_qsp4k"]
+variation_embolden = 1.02
+variation_transform = Transform2D(1, 0.3, 0, 1, 0, 0)
+
+[sub_resource type="Animation" id="Animation_qsp4k"]
+resource_name = "Fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334, 0.96666664, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kq58d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seu75"]
+_data = {
+&"Fade": SubResource("Animation_qsp4k"),
+&"RESET": SubResource("Animation_kq58d")
+}
 
 [node name="Main" type="Node2D" unique_id=790340846]
 
@@ -237,6 +279,20 @@ script = ExtResource("16_a6jrf")
 position = Vector2(-1502.7738, 218.70258)
 scale = Vector2(0.7108116, 0.7108116)
 sprite_frames = SubResource("SpriteFrames_w7tit")
+
+[node name="Multiplier" type="Label" parent="." unique_id=1047634982]
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 161.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_qsp4k")
+theme_override_font_sizes/font_size = 70
+script = ExtResource("29_qsp4k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplier" unique_id=1689954653]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_seu75")
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
