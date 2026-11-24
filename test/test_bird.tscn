@@ -13,7 +13,7 @@ bounce = 1.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -30,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_xxiod")
 }],
-"loop": false,
+"loop": 0,
 "name": &"flap",
 "speed": 10.0
 }]

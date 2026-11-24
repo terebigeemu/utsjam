@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://tik1yxuxuig0" path="res://Sprites/handThrowNew/PNGSet/PNG_0001.png" id="5_a6jrf"]
 [ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ca7ani3xw6qjj" path="res://ground_area.gd" id="5_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dadlptj0be55j" path="res://Sprites/handThrowNew/PNGSet/PNG_0002.png" id="6_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://bpn65n1hnonii" path="res://Sprites/handThrowNew/PNGSet/PNG_0003.png" id="7_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dj7lxn1gyksi0" path="res://Sprites/handThrowNew/PNGSet/PNG_0004.png" id="8_kq58d"]
@@ -25,12 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://dpxd1kbtyem7o" path="res://Sprites/rockThrow/PNGSet/PNG_0005.png" id="20_4lmeg"]
 [ext_resource type="Texture2D" uid="uid://c2wg6mrkw2kg6" path="res://Sprites/rockThrow/PNGSet/PNG_0006.png" id="21_0cp0l"]
 [ext_resource type="Texture2D" uid="uid://bhee5i1cs237c" path="res://Sprites/rockThrow/PNGSet/PNG_0007.png" id="22_d2t1y"]
+[ext_resource type="Script" uid="uid://wcrc1ekv1ypv" path="res://timer.gd" id="23_d13ii"]
 [ext_resource type="Texture2D" uid="uid://bfv80ksxhl8ol" path="res://Sprites/rockThrow/PNGSet/PNG_0008.png" id="23_gngh3"]
 [ext_resource type="Texture2D" uid="uid://jkr8jdpnin44" path="res://Sprites/rockThrow/PNGSet/PNG_0009.png" id="24_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
 [ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
 [ext_resource type="Script" uid="uid://c7ckrx1jlb2hq" path="res://multiplier.gd" id="29_qsp4k"]
-[ext_resource type="Script" uid="uid://wcrc1ekv1ypv" path="res://timer.gd" id="23_d13ii"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.3
@@ -46,6 +47,8 @@ bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7tit"]
 size = Vector2(973.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8bke"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5vw27"]
 friction = 0.75
@@ -87,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_facbu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
@@ -128,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_wnkbs")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
@@ -216,6 +219,14 @@ position = Vector2(476, 550)
 scale = Vector2(1.0800074, 1)
 shape = SubResource("RectangleShape2D_w7tit")
 
+[node name="GroundDetector" type="Area2D" parent="GroundArea" unique_id=90346162]
+script = ExtResource("5_qsp4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundArea/GroundDetector" unique_id=1968188388]
+position = Vector2(478.00003, 526)
+scale = Vector2(48.878353, -0.6470294)
+shape = SubResource("RectangleShape2D_u8bke")
+
 [node name="CelingArea" type="Area2D" parent="." unique_id=1181956362]
 position = Vector2(-53, -562)
 scale = Vector2(1.1369987, 0.9965369)
@@ -296,9 +307,11 @@ script = ExtResource("29_qsp4k")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplier" unique_id=1689954653]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_seu75")
+
 [node name="Timer" type="Node2D" parent="." unique_id=820777360]
 script = ExtResource("23_d13ii")
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
+[connection signal="body_entered" from="GroundArea/GroundDetector" to="GroundArea/GroundDetector" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]
