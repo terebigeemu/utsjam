@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="utsjam"
-run/main_scene="uid://bp5n2hn8cepcm"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://dqc8wmc45xmgs"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
