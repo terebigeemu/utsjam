@@ -18,7 +18,7 @@ func _on_spawn_timer_timeout() -> void:
 # Modified Loop from Leo
 func pigeon_spawn():
 	var dir := bool(randi() % 2)
-	for i in range(8):
+	for i in range(12):
 		var instance = bird_node.instantiate()
 		var pos := Vector2.from_angle(2*PI*randf())
 		pos *= 100 * randf()
