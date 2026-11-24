@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bjcrptngjxdy2"]
 
-[ext_resource type="Script" uid="uid://g122nbfkb5b0" path="res://home_screen.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://g122nbfkb5b0" path="res://scripts/home_screen.gd" id="1_epypp"]
 [ext_resource type="AudioStream" uid="uid://b7ghx2uf6tgly" path="res://330967__deleted_user_2104797__bird-flap-b-05.wav" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://br4qpfaa0h42t" path="res://Sprites/startMenu.png" id="3_epypp"]
 [ext_resource type="AudioStream" uid="uid://o7ngxq7cjew6" path="res://513269__zhr__tl-light-on-e.mp3" id="3_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://m1xn7rodus27" path="res://Sprites/blackRectangle.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dv0sbgd5fv5fl" path="res://Sprites/blackRectangle.png" id="4_0hol4"]
 [ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_d21ai"]
-[ext_resource type="Texture2D" uid="uid://b6yo4yu2n2mbi" path="res://Sprites/lightFlicker-removebg-preview.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dxmsgblhnyi6a" path="res://Sprites/lightFlicker-removebg-preview.png" id="6_kdubu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
 atlas = ExtResource("6_kdubu")

@@ -17,7 +17,7 @@ extends Node2D
 func _on_start_button_pressed():
 	audio.play() 
 	await audio.finished
-	get_tree().change_scene_to_file("res://fionas_test.tscn") ###!!!! replace w/ the actual game scene HERE
+	get_tree().change_scene_to_file("res://main.tscn") ###!!!! replace w/ the actual game scene HERE
 
 
 func _on_timer_timeout() -> void:
