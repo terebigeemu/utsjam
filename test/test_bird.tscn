@@ -8,7 +8,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xuqvo"]
 rough = true
-bounce = 0.29
+bounce = 0.5
 absorbent = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
