@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var scoreBoard = $ScoreBoard
+@onready var score = $Score
 @onready var playAgain = $PlayAgainBtn
 @onready var buttonAudio = $ButtonClick
 @onready var backgroundAudio = $BackgroundMusic
@@ -12,7 +12,7 @@ extends Node2D
 func _ready() -> void:
 	#To implement top scores
 	#scoreBoard.text = scores.topFiveScores()
-	scoreBoard.text = "hi bazooka\n ooooooo a new lineee"
+	score.text = "Final Score: " + str(Globals.score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
