@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chjn5o20jwbp2" path="res://Sprites/rockProjectile.png" id="4_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://tik1yxuxuig0" path="res://Sprites/handThrowNew/PNGSet/PNG_0001.png" id="5_a6jrf"]
 [ext_resource type="Script" uid="uid://di7voyg60yrjm" path="res://score.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ca7ani3xw6qjj" path="res://ground_area.gd" id="5_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dadlptj0be55j" path="res://Sprites/handThrowNew/PNGSet/PNG_0002.png" id="6_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://bpn65n1hnonii" path="res://Sprites/handThrowNew/PNGSet/PNG_0003.png" id="7_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dj7lxn1gyksi0" path="res://Sprites/handThrowNew/PNGSet/PNG_0004.png" id="8_kq58d"]
@@ -32,7 +33,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.5
 rough = true
-bounce = 0.5
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8bke"]
 radius = 21.204441
@@ -41,6 +42,9 @@ radius = 21.204441
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7tit"]
 size = Vector2(973.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8bke"]
+size = Vector2(92.310104, 1.5020142)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5vw27"]
 friction = 0.75
@@ -139,7 +143,7 @@ texture = ExtResource("1_ig7tw")
 script = ExtResource("3_xuqvo")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=1336735528]
-position = Vector2(483, -38)
+position = Vector2(483, -44.000004)
 scale = Vector2(0.37760296, 0.37760296)
 physics_material_override = SubResource("PhysicsMaterial_lquwl")
 contact_monitor = true
@@ -169,8 +173,17 @@ position = Vector2(476, 550)
 scale = Vector2(1.0800074, 1)
 shape = SubResource("RectangleShape2D_w7tit")
 
+[node name="GroundDetector" type="Area2D" parent="GroundArea" unique_id=563627552]
+position = Vector2(3, 0)
+script = ExtResource("5_qsp4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundArea/GroundDetector" unique_id=1670195187]
+position = Vector2(480.00003, 528)
+scale = Vector2(10.421394, 4.6603837)
+shape = SubResource("RectangleShape2D_u8bke")
+
 [node name="CelingArea" type="Area2D" parent="." unique_id=1181956362]
-position = Vector2(-53, -562)
+position = Vector2(-52.999996, -577.00006)
 scale = Vector2(1.1369987, 0.9965369)
 
 [node name="CeilingStaticBody" type="StaticBody2D" parent="CelingArea" unique_id=361955306]
@@ -237,5 +250,6 @@ scale = Vector2(0.7108116, 0.7108116)
 sprite_frames = SubResource("SpriteFrames_w7tit")
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
+[connection signal="body_entered" from="GroundArea/GroundDetector" to="GroundArea/GroundDetector" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="PersonParallax/Hand" to="PersonParallax/Hand" method="_on_animation_finished"]

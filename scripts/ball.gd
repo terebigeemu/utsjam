@@ -20,8 +20,9 @@ func _input(event: InputEvent) -> void:
 	#var shoot_dir := global_position.direction_to(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("launch") and Globals.in_motion == false:
-		target_pos = get_global_mouse_position()
+		target_pos = Vector2(get_global_mouse_position().x, 5)
 		print(target_pos)
+		Globals.touched_ground = false
 		Globals.throw_in_progress.emit(true)
 		#apply_central_impulse(shoot_dir * jump_impulse)
 
