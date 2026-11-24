@@ -22,7 +22,7 @@ func _ready() -> void:
 		position = Vector2(1060, spawnHeight)
 		speed = -230
 		
-	get_tree().create_timer(soundChance1)
+	
 		
 func _process(delta: float) -> void:
 	position.x += delta * speed
