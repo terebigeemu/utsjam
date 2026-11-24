@@ -14,7 +14,7 @@ absorbent = true
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
 "frames": [],
-"loop": 1,
+"loop": true,
 "name": &"dead",
 "speed": 5.0
 }, {
