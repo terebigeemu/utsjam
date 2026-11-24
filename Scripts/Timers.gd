@@ -3,7 +3,7 @@ extends Node2D
 const bird = preload("res://test/test_bird.tscn")
 
 func _ready():
-#	pigeon_spawn()
+	pigeon_spawn()
 	_random_time()
 
 func _random_time():
