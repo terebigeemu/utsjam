@@ -22,13 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://1gyno8upnfgn" path="res://Sprites/rockThrow/PNGSet/PNG_0002.png" id="17_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://g37nc0dmbnpw" path="res://Sprites/rockThrow/PNGSet/PNG_0003.png" id="18_come4"]
 [ext_resource type="Texture2D" uid="uid://bce0sql3pm1d5" path="res://Sprites/rockThrow/PNGSet/PNG_0004.png" id="19_h8e4i"]
-[ext_resource type="Texture2D" uid="uid://dpxd1kbtyem7o" path="res://Sprites/rockThrow/PNGSet/PNG_0005.png" id="20_4lmeg"]
-[ext_resource type="Texture2D" uid="uid://c2wg6mrkw2kg6" path="res://Sprites/rockThrow/PNGSet/PNG_0006.png" id="21_0cp0l"]
-[ext_resource type="Texture2D" uid="uid://bhee5i1cs237c" path="res://Sprites/rockThrow/PNGSet/PNG_0007.png" id="22_d2t1y"]
-[ext_resource type="Texture2D" uid="uid://bfv80ksxhl8ol" path="res://Sprites/rockThrow/PNGSet/PNG_0008.png" id="23_gngh3"]
-[ext_resource type="Texture2D" uid="uid://jkr8jdpnin44" path="res://Sprites/rockThrow/PNGSet/PNG_0009.png" id="24_0n3wm"]
-[ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
-[ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.5
@@ -107,25 +100,25 @@ animations = [{
 "texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_4lmeg")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_0cp0l")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_d2t1y")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_gngh3")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_0n3wm")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_qnost")
+"texture": ExtResource("19_h8e4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_wnkbs")
+"texture": ExtResource("19_h8e4i")
 }],
 "loop": 0,
 "name": &"default",
