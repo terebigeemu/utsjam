@@ -36,7 +36,6 @@ func _on_animation_finished() -> void:
 		sprite.play("flap", -1.0 * sprite_speed, true)
 
 func _on_bird_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	await get_tree().create_timer(2.0).timeout
 	living = false
 	fall = Vector2.from_angle(sprite.rotation - 0.226)
 	fall *+ - sprite_speed * 100
