@@ -1,8 +1,8 @@
 extends Node2D
 # Written by Leo
-@onready var sprite = get_node("RigidBody2D/AnimatedSprite2D")
-@onready var collision_shape = get_node("RigidBody2D/CollisionShape2D")
-@onready var physics = get_node("RigidBody2D")
+@onready var sprite = get_node("AnimatableBody2D/AnimatedSprite2D")
+@onready var collision_shape = get_node("AnimatableBody2D/CollisionShape2D")
+@onready var physics = get_node("AnimatableBody2D")
 var playing_forward := true
 var sprite_speed : float
 #var AngofAtk : float
@@ -13,7 +13,7 @@ func _ready() -> void:
 	# Vary the bird size
 	var resizing : float = 0.16 + 0.1 * randf()
 	sprite.scale = Vector2(resizing,resizing)
-	collision_shape.scale = Vector2(resizing,resizing)
+	collision_shape.scale = Vector2(resizing*5,resizing*5)
 	# original size is 400px
 	# Initial Angle of Attack
 	sprite.rotation = (-0.01 + 0.15 * randf())
@@ -39,15 +39,15 @@ func _on_animation_finished() -> void:
 
 func _process(delta: float) -> void:
 	# drop_rate
-	var drop : float = -((sprite.rotation + PI/2 )/PI)**.7 * 0.015
+	var drop : float = -((sprite.rotation + PI/2 )/PI)**.7 * 0.01
 	sprite.rotate(drop)
 	if sprite.rotation < - PI/2 or sprite.rotation > PI/2:
 		sprite.rotation = (-0.01 + 0.15 * randf())
 	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
-	sprite.position += translation * - sprite_speed * 100 * delta
-	collision_shape.position = sprite.position
+	physics.position += translation * - sprite_speed * 300 * delta
+	#physics.position = sprite.position
 	# Force the bird to fly up if it is crashing into the ground
-	if sprite.global_position.y > 300:
-		sprite.rotate(-drop * 1.2)
+	if sprite.global_position.y > 350:
+		sprite.rotate(-drop * 1.5)
 	if sprite.global_position.x > 1360 or position.x < -200:
 		queue_free()
