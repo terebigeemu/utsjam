@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqc8wmc45xmgs"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_ul1e0"]
+file = "IntroCutscene.ogv"
+
+[node name="IntroCutscene" type="Node2D" unique_id=1258064028]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=894954378]
+position = Vector2(482, 276.00003)
+scale = Vector2(1.4253353, 0.37643406)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2029646026]
+offset_left = 74.99999
+offset_right = 1995.0
+offset_bottom = 1080.0
+scale = Vector2(0.4239417, 0.502438)
+stream = SubResource("VideoStreamTheora_ul1e0")
+autoplay = true

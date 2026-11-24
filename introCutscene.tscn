@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bafkufwv1vckp"]
+
+[ext_resource type="Script" uid="uid://d25r14fxxku8y" path="res://intro_cutscene.gd" id="1_702ub"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_oaitn"]
+file = "IntroCutscene.ogv"
+
+[node name="Control" type="Control" unique_id=481151831]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_702ub")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1326085551]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_oaitn")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2004159949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=847809782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
