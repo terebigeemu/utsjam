@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbtqgnkljtg1w"]
 
 [ext_resource type="Script" uid="uid://b8c10jpkhpmr2" path="res://scripts/endScreen.gd" id="1_egc6y"]
+[ext_resource type="Texture2D" uid="uid://bpcpefng8phb3" path="res://Screenshot 2026-11-24 164955.png" id="2_75yvt"]
 [ext_resource type="AudioStream" uid="uid://b7ghx2uf6tgly" path="res://330967__deleted_user_2104797__bird-flap-b-05.wav" id="3_lt2ag"]
 [ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_75yvt"]
 
@@ -8,8 +9,9 @@
 script = ExtResource("1_egc6y")
 
 [node name="EndScreenPlaceholder" type="Sprite2D" parent="." unique_id=603907419]
-position = Vector2(583, 324)
-scale = Vector2(2.3147411, 1.9756098)
+position = Vector2(487, 199)
+scale = Vector2(0.92000127, 0.8873002)
+texture = ExtResource("2_75yvt")
 
 [node name="PlayAgainBtn" type="Button" parent="." unique_id=1048817140]
 modulate = Color(1, 1, 1, 0)
