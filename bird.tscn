@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://bypqdc5f4ki48"]
 
-[ext_resource type="Texture2D" uid="uid://blgtiau6punar" path="res://icon.svg" id="1_g5k2s"]
-[ext_resource type="Script" uid="uid://b4rcsouhp5joj" path="res://scripts/BirdFly.gd" id="2_crnqq"]
+[ext_resource type="Texture2D" uid="uid://ht6dc4qnvo64" path="res://Sprites/Bird/Pigeon/Bird_01.png" id="1_crnqq"]
+[ext_resource type="Script" uid="uid://rer47pwe458l" path="res://scripts/test_bird.gd" id="2_6ljjq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_crnqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crnqq"]
 
 [node name="Bird" type="Sprite2D" unique_id=119243533]
-texture = ExtResource("1_g5k2s")
-script = ExtResource("2_crnqq")
-minHeight = 30.0
-maxHeight = 400.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_crnqq")
+script = ExtResource("2_6ljjq")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1135741842]
+[node name="Node2D" type="Node2D" parent="." unique_id=1278569625]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" unique_id=1603300806]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D/AnimatedSprite2D" unique_id=1135741842]
 physics_material_override = SubResource("PhysicsMaterial_crnqq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=536386100]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AnimatedSprite2D/RigidBody2D" unique_id=536386100]
 shape = SubResource("RectangleShape2D_crnqq")

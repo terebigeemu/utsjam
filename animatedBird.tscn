@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://vn6o0a2hbgb6"]
+
+[ext_resource type="Script" uid="uid://b4rcsouhp5joj" path="res://scripts/BirdFly.gd" id="1_0btcv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pj1xq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mjpd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0btcv"]
+height = 32.0
+
+[node name="AnimatedBird" type="Node2D" unique_id=319711010]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607901157]
+sprite_frames = SubResource("SpriteFrames_pj1xq")
+script = ExtResource("1_0btcv")
+minHeight = 50.0
+maxHeight = 400.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="AnimatedSprite2D" unique_id=23387802]
+physics_material_override = SubResource("PhysicsMaterial_2mjpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/RigidBody2D" unique_id=982145613]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0btcv")

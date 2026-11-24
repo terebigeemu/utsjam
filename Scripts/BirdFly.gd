@@ -3,7 +3,6 @@ extends Node2D
 @export var minHeight: float
 @export var maxHeight: float
 
-
 var speed: float
 
 func _ready() -> void:
@@ -13,10 +12,12 @@ func _ready() -> void:
 	if direction == 1:
 		position = Vector2(-100, spawnHeight)
 		speed = 230
+		scale.x = -0.3
 	else:
 		position = Vector2(1060, spawnHeight)
 		speed = -230
-
+		scale.x = 0.3
+		
 func _process(delta: float) -> void:
 	position.x += delta * speed
 	if position.x > 1060 or position.x < -100:
