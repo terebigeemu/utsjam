@@ -6,11 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bbrkwu6hmcgw3" path="res://Sprites/Bird/Pigeon/Bird_03.png" id="4_8mls6"]
 [ext_resource type="Texture2D" uid="uid://gb0y4bpuuf6p" path="res://Sprites/Bird/Pigeon/Bird_04.png" id="5_xxiod"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xuqvo"]
-rough = true
-bounce = 0.29
-absorbent = true
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
 "frames": [{
@@ -31,21 +26,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_72jeb"]
-
-[node name="Node2D2" type="Node2D" unique_id=1922979459]
+[node name="Node2D" type="Node2D" unique_id=1922979459]
 position = Vector2(-1, -1)
 script = ExtResource("1_ejgwb")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1983407413]
-physics_material_override = SubResource("PhysicsMaterial_xuqvo")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1169822462]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169822462]
 sprite_frames = SubResource("SpriteFrames_s3r25")
 animation = &"flap"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1758691481]
-scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_72jeb")
-
-[connection signal="animation_finished" from="AnimatableBody2D/AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
