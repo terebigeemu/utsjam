@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bbrkwu6hmcgw3" path="res://Sprites/Bird/Pigeon/Bird_03.png" id="4_8mls6"]
 [ext_resource type="Texture2D" uid="uid://gb0y4bpuuf6p" path="res://Sprites/Bird/Pigeon/Bird_04.png" id="5_xxiod"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xuqvo"]
+rough = true
+bounce = 0.29
+absorbent = true
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3r25"]
 animations = [{
 "frames": [{
@@ -33,6 +38,7 @@ position = Vector2(-1, -1)
 script = ExtResource("1_ejgwb")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1983407413]
+physics_material_override = SubResource("PhysicsMaterial_xuqvo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1169822462]
 sprite_frames = SubResource("SpriteFrames_s3r25")
