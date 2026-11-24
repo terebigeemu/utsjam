@@ -3,6 +3,7 @@ extends Node2D
 @export var minHeight: float
 @export var maxHeight: float
 
+
 var speed: float
 
 func _ready() -> void:
