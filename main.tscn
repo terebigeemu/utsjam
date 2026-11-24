@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dayod8fymlek8" path="res://Sprites/rockThrow/PNGSet/PNG_0010.png" id="25_qnost"]
 [ext_resource type="Texture2D" uid="uid://ddgg84itktkbm" path="res://Sprites/rockThrow/PNGSet/PNG_0011.png" id="26_wnkbs"]
 [ext_resource type="Script" uid="uid://c7ckrx1jlb2hq" path="res://multiplier.gd" id="29_qsp4k"]
+[ext_resource type="AudioStream" uid="uid://cmy5dtcguptbh" path="res://SFX/Two Birds One Stone Music Final.wav" id="33_jq2sk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
 friction = 0.3
@@ -90,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_facbu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
@@ -131,7 +132,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_wnkbs")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
@@ -311,6 +312,11 @@ libraries/ = SubResource("AnimationLibrary_seu75")
 
 [node name="Timer" type="Node2D" parent="." unique_id=820777360]
 script = ExtResource("23_d13ii")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=61945241]
+stream = ExtResource("33_jq2sk")
+volume_db = -3.0
+autoplay = true
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
 [connection signal="body_entered" from="GroundArea/GroundDetector" to="GroundArea/GroundDetector" method="_on_body_entered"]

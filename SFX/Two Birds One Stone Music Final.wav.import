@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmy5dtcguptbh"
+path="res://.godot/imported/Two Birds One Stone Music Final.wav-09bb0d41c8604e72d32828d00a1921aa.sample"
+
+[deps]
+
+source_file="res://SFX/Two Birds One Stone Music Final.wav"
+dest_files=["res://.godot/imported/Two Birds One Stone Music Final.wav-09bb0d41c8604e72d32828d00a1921aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

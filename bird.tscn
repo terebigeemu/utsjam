@@ -2,6 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://blgtiau6punar" path="res://icon.svg" id="1_g5k2s"]
 [ext_resource type="Script" uid="uid://b4rcsouhp5joj" path="res://scripts/BirdFly.gd" id="2_crnqq"]
+[ext_resource type="AudioStream" uid="uid://b2lwd8ki4ectr" path="res://SFX/PIGEON 1.wav" id="3_l2t0q"]
+[ext_resource type="AudioStream" uid="uid://ci2h0t6o6p8yr" path="res://SFX/PIGEON 2.wav" id="4_vab2h"]
+[ext_resource type="AudioStream" uid="uid://bq8ve02pbw5pe" path="res://SFX/PIGEON 3.wav" id="5_548is"]
+[ext_resource type="AudioStream" uid="uid://0oukxbykj32r" path="res://SFX/PIGEON 4.wav" id="6_f430k"]
+[ext_resource type="AudioStream" uid="uid://c3qppcxbv0fr5" path="res://SFX/PIGEON 5.wav" id="7_bn747"]
+[ext_resource type="AudioStream" uid="uid://cb73b3ghe4eov" path="res://SFX/PIGEON 6.wav" id="8_dd6dp"]
+[ext_resource type="AudioStream" uid="uid://foquito58lds" path="res://SFX/PIGEON 7.wav" id="9_vox6r"]
+[ext_resource type="AudioStream" uid="uid://bbgbxn1gw0pg3" path="res://SFX/PIGEON 8.wav" id="10_a7h38"]
+[ext_resource type="AudioStream" uid="uid://cq3ktcbydksau" path="res://SFX/PIGEON 9.wav" id="11_81qbw"]
+[ext_resource type="AudioStream" uid="uid://db4cl7ddbiw60" path="res://SFX/PIGEON 10.wav" id="12_qnuwx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_crnqq"]
 
@@ -18,3 +28,40 @@ physics_material_override = SubResource("PhysicsMaterial_crnqq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=536386100]
 shape = SubResource("RectangleShape2D_crnqq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=353693523]
+
+[node name="Timer" type="Timer" parent="." unique_id=872948002]
+autostart = true
+
+[node name="PIGEON1" type="AudioStreamPlayer" parent="." unique_id=1303617712]
+stream = ExtResource("3_l2t0q")
+
+[node name="PIGEON2" type="AudioStreamPlayer" parent="." unique_id=571278950]
+stream = ExtResource("4_vab2h")
+
+[node name="PIGEON3" type="AudioStreamPlayer" parent="." unique_id=1516777637]
+stream = ExtResource("5_548is")
+
+[node name="PIGEON4" type="AudioStreamPlayer" parent="." unique_id=1531831282]
+stream = ExtResource("6_f430k")
+
+[node name="PIGEON5" type="AudioStreamPlayer" parent="." unique_id=136502083]
+stream = ExtResource("7_bn747")
+
+[node name="PIGEON6" type="AudioStreamPlayer" parent="." unique_id=393758720]
+stream = ExtResource("8_dd6dp")
+
+[node name="PIGEON7" type="AudioStreamPlayer" parent="." unique_id=251532790]
+stream = ExtResource("9_vox6r")
+
+[node name="PIGEON8" type="AudioStreamPlayer" parent="." unique_id=1909336613]
+stream = ExtResource("10_a7h38")
+
+[node name="PIGEON9" type="AudioStreamPlayer" parent="." unique_id=1075808620]
+stream = ExtResource("11_81qbw")
+
+[node name="PIGEON10" type="AudioStreamPlayer" parent="." unique_id=1597359771]
+stream = ExtResource("12_qnuwx")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
