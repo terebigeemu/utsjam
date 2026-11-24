@@ -1,8 +1,16 @@
 extends Node2D
 # Written by Leo
+<<<<<<< HEAD
 @onready var sprite = get_node("AnimatableBody2D/AnimatedSprite2D")
 @onready var collision_shape = get_node("AnimatableBody2D/CollisionShape2D")
 @onready var physics = get_node("AnimatableBody2D")
+=======
+@onready var sprite = get_node("RigidBody2D/AnimatedSprite2D")
+@onready var collision_shape = get_node("RigidBody2D/CollisionShape2D")
+@onready var physics = get_node("RigidBody2D")
+@onready var animatable_body = get_node("AnimatableBody2D")
+#@onready var collision_shape = get_node("AnimatableBody2D/CollisionShape2D")
+>>>>>>> 67a9423 (Bird test scene)
 var playing_forward := true
 var sprite_speed : float
 #var AngofAtk : float
@@ -46,7 +54,8 @@ func _process(delta: float) -> void:
 		sprite.rotation = (-0.01 + 0.15 * randf())
 	var translation := Vector2.from_angle(sprite.rotation - 0.226).normalized()
 	physics.position += translation * - sprite_speed * 500 * delta
-	#physics.position = sprite.position
+	sprite.position += translation * - sprite_speed * 100 * delta
+	collision_shape.position += translation * - sprite_speed * 100 * delta
 	# Force the bird to fly up if it is crashing into the ground
 	if sprite.global_position.y > 350:
 		sprite.rotate(-drop * 1.5)
