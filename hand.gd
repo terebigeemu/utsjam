@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 # written by adrian
 
 @export var hand_scroll_factor: float = 0.05
-@export var scroll_offset_x: float = 6000.0
+@export var scroll_offset_x: float = 8000.0
 @export var scroll_offset_y: float = -6
 
 @onready var rock_sprite: AnimatedSprite2D = get_node("Rock")
