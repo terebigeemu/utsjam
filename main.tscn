@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_facbu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_wnkbs")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]

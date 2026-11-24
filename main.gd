@@ -7,6 +7,7 @@ var tutorial_scene = preload("res://tutorial_overlay.tscn")
 func _ready() -> void:
 	var instance = tutorial_scene.instantiate()
 	add_child(instance)
+	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
