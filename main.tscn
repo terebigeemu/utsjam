@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bp5n2hn8cepcm"]
 
+[ext_resource type="Script" uid="uid://d2xhq6cs8yva2" path="res://main.gd" id="1_d13ii"]
 [ext_resource type="Texture2D" uid="uid://b1wpcnfxd63w3" path="res://assets/SkyPlaceholder.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cim3sjeowg583" path="res://scripts/ball.gd" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bh31ufwlgpxqa" path="res://scripts/main_flock.gd" id="3_xuqvo"]
@@ -126,6 +127,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D" unique_id=790340846]
+script = ExtResource("1_d13ii")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1946275568]
 position = Vector2(482, 280)

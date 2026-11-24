@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d25r14fxxku8y" path="res://intro_cutscene.gd" id="1_rlq26"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_ul1e0"]
-file = "IntroCutscene.ogv"
+file = "Two-Birds-One-Stone-Cutscene-test-LUFS.ogv"
 
 [node name="IntroCutscene" type="Node2D" unique_id=1258064028]
 script = ExtResource("1_rlq26")

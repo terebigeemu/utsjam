@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b71cc17g8lhmv"]
+
+[ext_resource type="Script" uid="uid://j05vetjv1mhk" path="res://tutorial_overlay.gd" id="1_qwqh4"]
+[ext_resource type="Texture2D" uid="uid://cyhgd1vus8uvo" path="res://tutorialOverlay.png" id="2_v54sr"]
+
+[node name="TutorialOverlay" type="Control" unique_id=1767906767]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwqh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=636616433]
+position = Vector2(475, 274)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_v54sr")
+
+[node name="Timer" type="Timer" parent="." unique_id=269691226]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
