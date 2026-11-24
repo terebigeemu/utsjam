@@ -13,16 +13,12 @@ scale = Vector2(2.3147411, 1.9756098)
 
 [node name="PlayAgainBtn" type="Button" parent="." unique_id=1048817140]
 modulate = Color(1, 1, 1, 0)
-offset_left = 253.0
-offset_top = 376.0
-offset_right = 962.0
-offset_bottom = 602.0
-
-[node name="ScoreBoard" type="Label" parent="." unique_id=354580767]
-offset_left = 68.0
-offset_top = 49.0
-offset_right = 406.0
-offset_bottom = 214.0
+offset_left = 121.0
+offset_top = 304.0
+offset_right = 830.0
+offset_bottom = 530.0
+text = "Play Again
+"
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=445194800]
 stream = ExtResource("3_lt2ag")
@@ -30,5 +26,13 @@ stream = ExtResource("3_lt2ag")
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=135766991]
 stream = ExtResource("4_75yvt")
 autoplay = true
+
+[node name="Score" type="Label" parent="." unique_id=929241994]
+offset_left = 107.0
+offset_top = 151.0
+offset_right = 244.3913
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(1, 0.18431373, 0, 1)
+theme_override_font_sizes/font_size = 75
 
 [connection signal="pressed" from="PlayAgainBtn" to="." method="_on_play_again_btn_pressed"]
