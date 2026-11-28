@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@onready var throw_sfx = get_node("../../Throw")
+
 # written by adrian
 
 @export var hand_scroll_factor: float = 0.05
@@ -20,6 +22,7 @@ func _on_throw(status: bool) -> void:
 	Globals.in_throw = true
 	self.play()
 	rock_sprite.play()
+	throw_sfx.play()
 	var mouse_pos = get_viewport().get_mouse_position()
 	last_scroll_offset = hand_scroll_factor * (mouse_pos + Vector2(scroll_offset_x,scroll_offset_y))
 
@@ -28,6 +31,7 @@ func _on_animation_finished() -> void:
 	rock_sprite.stop()
 	Globals.throw_finished.emit()
 	Globals.in_throw = false
+	Globals.in_motion = true
 	print("throw finished")
 	
 func _input(event):

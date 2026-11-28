@@ -2,25 +2,87 @@
 
 [ext_resource type="Script" uid="uid://b8c10jpkhpmr2" path="res://scripts/endScreen.gd" id="1_egc6y"]
 [ext_resource type="Texture2D" uid="uid://bpcpefng8phb3" path="res://Screenshot 2026-11-24 164955.png" id="2_75yvt"]
+[ext_resource type="Texture2D" uid="uid://br4qpfaa0h42t" path="res://Sprites/startMenu.png" id="2_jclhh"]
 [ext_resource type="AudioStream" uid="uid://b7ghx2uf6tgly" path="res://330967__deleted_user_2104797__bird-flap-b-05.wav" id="3_lt2ag"]
 [ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_75yvt"]
+[ext_resource type="FontFile" uid="uid://cdube0tv63m7i" path="res://assets/PermanentMarker-Regular.ttf" id="4_m3e5g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8bke"]
+bg_color = Color(0.85882354, 0.85882354, 0.4117647, 1)
+border_color = Color(0.39607844, 0.23529412, 0.039215688, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7tit"]
+bg_color = Color(0.85882354, 0.85882354, 0.85882354, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wabui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0n3wm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oli24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbgcu"]
+bg_color = Color(0.86256707, 0.71254045, 0.7554077, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3e5g"]
+bg_color = Color(0.8558662, 0.87624836, 0.7514532, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6pt3"]
+bg_color = Color(0.5964599, 0.8264007, 0.87244517, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
 
 [node name="EndScreen" type="Node2D" unique_id=340949147]
 script = ExtResource("1_egc6y")
 
+[node name="StartMenu" type="Sprite2D" parent="." unique_id=90686955]
+position = Vector2(480.80624, 264.1299)
+scale = Vector2(0.33458766, 0.33763534)
+texture = ExtResource("2_jclhh")
+
 [node name="EndScreenPlaceholder" type="Sprite2D" parent="." unique_id=603907419]
+visible = false
 position = Vector2(487, 199)
 scale = Vector2(0.92000127, 0.8873002)
 texture = ExtResource("2_75yvt")
 
 [node name="PlayAgainBtn" type="Button" parent="." unique_id=1048817140]
 modulate = Color(1, 1, 1, 0)
-offset_left = 121.0
-offset_top = 304.0
-offset_right = 830.0
-offset_bottom = 530.0
+offset_left = 385.80627
+offset_top = 369.1299
+offset_right = 1094.8063
+offset_bottom = 595.1299
+scale = Vector2(0.25124124, 0.6226712)
 text = "Play Again
 "
+
+[node name="Label" type="Label" parent="." unique_id=689461894]
+offset_left = 477.80627
+offset_top = 452.1299
+offset_right = 647.8063
+offset_bottom = 524.1299
+rotation = 0.15268973
+scale = Vector2(0.48376435, 0.6355028)
+theme_override_colors/font_color = Color(0.9254902, 1, 0.42352942, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 50
+text = "AGAIN"
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=445194800]
 stream = ExtResource("3_lt2ag")
@@ -29,12 +91,147 @@ stream = ExtResource("3_lt2ag")
 stream = ExtResource("4_75yvt")
 autoplay = true
 
+[node name="Panel" type="Panel" parent="." unique_id=655563375]
+offset_left = 299.8063
+offset_top = 134.12991
+offset_right = 339.8063
+offset_bottom = 174.12991
+rotation = -0.1049939
+scale = Vector2(8.50901, 5.8182173)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u8bke")
+
+[node name="ScoreCaption" type="Label" parent="." unique_id=739233050]
+offset_left = 317.80627
+offset_top = 150.09839
+offset_right = 498.80627
+offset_bottom = 369.0984
+rotation = -0.08833847
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 30
+text = "Your Score..."
+
 [node name="Score" type="Label" parent="." unique_id=929241994]
-offset_left = 107.0
-offset_top = 151.0
-offset_right = 244.3913
-offset_bottom = 254.0
+offset_left = 403.80624
+offset_top = 169.0984
+offset_right = 549.8063
+offset_bottom = 388.0984
+rotation = -0.08833847
 theme_override_colors/font_color = Color(1, 0.18431373, 0, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 50
+text = "test
+"
+horizontal_alignment = 1
+
+[node name="MultiplierCaption" type="Label" parent="." unique_id=807103371]
+offset_left = 331.8062
+offset_top = 249.09836
+offset_right = 635.8063
+offset_bottom = 468.09833
+rotation = -0.10071962
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 30
+text = "Highest Multiplier..."
+
+[node name="MultiplierRecord" type="Label" parent="." unique_id=224581004]
+offset_left = 414.80627
+offset_top = 264.09842
+offset_right = 560.8063
+offset_bottom = 483.09842
+rotation = -0.08833847
+theme_override_colors/font_color = Color(1, 0.18431373, 0, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 50
+text = "test
+"
+horizontal_alignment = 1
+
+[node name="LeaderboardPanel" type="Panel" parent="." unique_id=1575045423]
+offset_left = 710.80634
+offset_top = 268.12994
+offset_right = 750.80634
+offset_bottom = 308.12994
+rotation = 0.29913723
+scale = Vector2(2.8435996, 4.689618)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7tit")
+
+[node name="ScoreboardCaption" type="Label" parent="." unique_id=359371617]
+offset_left = 712.8063
+offset_top = 266.1299
+offset_right = 843.8063
+offset_bottom = 347.1299
+rotation = 0.30537087
+scale = Vector2(0.9275024, 0.9275024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 22
+text = "Send to
+Scoreboard"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreboardDisclaimer" type="Label" parent="." unique_id=1614270247]
+offset_left = 698.8063
+offset_top = 316.1299
+offset_right = 829.8063
+offset_bottom = 644.13
+rotation = 0.30537087
+scale = Vector2(0.9279502, 0.90804005)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 13
+text = "By submitting your score, you agree for your information to be sent to a service registered with Talo Platforms Ltd"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="UsernameSubmit" type="LineEdit" parent="." unique_id=2033828720]
+offset_left = 671.8063
+offset_top = 408.1299
+offset_right = 740.3063
+offset_bottom = 439.1299
+rotation = 0.31652796
+scale = Vector2(1.7287982, 0.8495773)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "Username"
+
+[node name="ScoreboardSubmit" type="Button" parent="." unique_id=1542548878]
+offset_left = 663.8063
+offset_top = 434.12988
+offset_right = 782.8063
+offset_bottom = 473.12988
+rotation = 0.31454822
+scale = Vector2(0.9966092, 0.62900925)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.43137255, 0.9490196, 1)
+theme_override_colors/font_disabled_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wabui")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0n3wm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oli24")
+text = "SEND >>>"
+
+[node name="ScoreboardSceneOpen" type="Button" parent="." unique_id=413763714]
+offset_left = 128.80627
+offset_top = 301.1299
+offset_right = 225.80627
+offset_bottom = 332.1299
+rotation = -0.20969486
+scale = Vector2(1.2928774, 1.2928774)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0, 0.43137255, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("4_m3e5g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nbgcu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3e5g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6pt3")
+text = "Scoreboard"
 
 [connection signal="pressed" from="PlayAgainBtn" to="." method="_on_play_again_btn_pressed"]
+[connection signal="pressed" from="ScoreboardSubmit" to="." method="_on_scoreboard_submit_pressed"]
+[connection signal="pressed" from="ScoreboardSceneOpen" to="." method="_on_scoreboard_scene_open_pressed"]

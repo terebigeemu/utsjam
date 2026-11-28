@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@onready var pigeon_hit = get_node("../PigeonHit")
+
 # written by adrian
 
 @export var jump_impulse := 1000.0
@@ -32,13 +34,20 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	
+	if Globals.in_motion == true:
+		self.visible = true
+	else:
+		self.visible = false
+	
 	#if Globals.in_motion == false:
 	#	look_at(get_global_mouse_position())		
 	
-	if ((linear_velocity.length_squared() > movement_threshold) or (angular_velocity > movement_threshold) and has_touched_ground == false):
-		Globals.in_motion = true
-	else:
-		Globals.in_motion = false
+	#if ((linear_velocity.length_squared() > movement_threshold) or (angular_velocity > movement_threshold) and has_touched_ground == false):
+	#	Globals.in_motion = true
+	#	self.visible = true
+	#else:
+	#	Globals.in_motion = false
+	#	self.visible = false
 		
 func _on_throw_finished() -> void:
 	self.sleeping = false
@@ -47,7 +56,7 @@ func _on_throw_finished() -> void:
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	print("transforming to " and target_pos)
 	if should_teleport == true:
-		state.transform.origin = target_pos
+		state.transform.origin = Vector2(target_pos.x, 0)
 		state.linear_velocity = Vector2.ZERO # Optional: stops old momentum
 		should_teleport = false
 
@@ -59,6 +68,7 @@ func _on_body_entered(body: Node) -> void:
 	if (body.name == "AnimatableBody2D"):
 		num_of_birds += 1
 		Globals.score += (150 * num_of_birds)
+		pigeon_hit.play()
 		if num_of_birds > 1:
 			Globals.multiplier = num_of_birds
 			Globals.canSee = true

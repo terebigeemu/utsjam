@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://dnydbaa4kffsf"
+Talo="*uid://bpmdn8oc34pg7"
 
 [display]
 
@@ -26,10 +27,12 @@ window/size/viewport_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/dpi/allow_hidpi=false
+mouse_cursor/custom_image="uid://bxlmhlc7o6k4k"
+mouse_cursor/custom_image_hotspot=Vector2(32, 32)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/random_timer/plugin.cfg")
+enabled=PackedStringArray("res://addons/talo/plugin.cfg")
 
 [input]
 

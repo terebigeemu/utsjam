@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://10aipp4jmgtd"]
+
+[ext_resource type="Script" uid="uid://cymptnudyhskj" path="res://scripts/talo_scoreboard.gd" id="1_2t7te"]
+[ext_resource type="Theme" uid="uid://ce2uyi827vc5x" path="res://addons/talo/samples/authentication/assets/theme.tres" id="2_oli24"]
+[ext_resource type="FontFile" uid="uid://cdube0tv63m7i" path="res://assets/PermanentMarker-Regular.ttf" id="3_oli24"]
+
+[node name="Leaderboard" type="Node2D" unique_id=2055924915]
+script = ExtResource("1_2t7te")
+
+[node name="UI" type="Control" parent="." unique_id=575900823]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 142.0
+offset_top = 43.0
+offset_right = 1222.0
+offset_bottom = 763.0
+scale = Vector2(0.6241576, 0.6133384)
+
+[node name="Background" type="ColorRect" parent="UI" unique_id=1653174925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24705882, 0.12156863, 0.05490196, 0.94509804)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=565311974]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=25159751]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="LeaderboardName" type="Label" parent="UI/MarginContainer/VBoxContainer" unique_id=869659408]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_oli24")
+theme_override_fonts/font = ExtResource("3_oli24")
+theme_override_font_sizes/font_size = 64
+text = "{leaderboard} entries"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="InfoLabel" type="Label" parent="UI/MarginContainer/VBoxContainer" unique_id=638995712]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_oli24")
+theme_override_font_sizes/font_size = 32
+text = "Loading..."
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer/VBoxContainer" unique_id=1643490253]
+custom_minimum_size = Vector2(2.08165e-12, 300)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Entries" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1750082725]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(2.08165e-12, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1575124882]
+offset_left = 759.0
+offset_top = 51.0
+offset_right = 809.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_oli24")
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

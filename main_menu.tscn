@@ -1,66 +1,94 @@
 [gd_scene format=3 uid="uid://bjcrptngjxdy2"]
 
-[ext_resource type="Script" uid="uid://g122nbfkb5b0" path="res://scripts/home_screen.gd" id="1_epypp"]
-[ext_resource type="AudioStream" uid="uid://b7ghx2uf6tgly" path="res://330967__deleted_user_2104797__bird-flap-b-05.wav" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://br4qpfaa0h42t" path="res://Sprites/startMenu.png" id="3_epypp"]
-[ext_resource type="AudioStream" uid="uid://o7ngxq7cjew6" path="res://513269__zhr__tl-light-on-e.mp3" id="3_q6r6c"]
-[ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_d21ai"]
-[ext_resource type="Texture2D" uid="uid://dxmsgblhnyi6a" path="res://Sprites/lightFlicker-removebg-preview.png" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://g122nbfkb5b0" path="res://scripts/home_screen.gd" id="1_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://d4bo4004dcxkn" path="res://SFX/start-menu-button.wav" id="2_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://o7ngxq7cjew6" path="res://513269__zhr__tl-light-on-e.mp3" id="3_8qtwp"]
+[ext_resource type="AudioStream" uid="uid://d2etanrhmbvx" path="res://placeholderBackgroundMusic.wav" id="4_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://br4qpfaa0h42t" path="res://Sprites/startMenu.png" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://dxmsgblhnyi6a" path="res://Sprites/lightFlicker-removebg-preview.png" id="6_0k4wn"]
+[ext_resource type="FontFile" uid="uid://cdube0tv63m7i" path="res://assets/PermanentMarker-Regular.ttf" id="7_qe12f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.86256707, 0.71254045, 0.7554077, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
+bg_color = Color(0.8558662, 0.87624836, 0.7514532, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
+bg_color = Color(0.5964599, 0.8264007, 0.87244517, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_right = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(0, 0, 312, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(312, 0, 312, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(0, 0, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(312, 0, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(156, 0, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(468, 0, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(156, 100, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(312, 100, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(0, 100, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(468, 100, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(0, 200, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(312, 200, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(156, 200, 156, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
-atlas = ExtResource("6_kdubu")
+atlas = ExtResource("6_0k4wn")
 region = Rect2(468, 200, 156, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_thbym"]
@@ -114,7 +142,8 @@ animations = [{
 }]
 
 [node name="home_screen" type="Node2D" unique_id=1156949086]
-script = ExtResource("1_epypp")
+position = Vector2(42, 203)
+script = ExtResource("1_nlkkf")
 
 [node name="StartButton" type="Button" parent="." unique_id=546806821]
 offset_left = 302.25677
@@ -125,36 +154,61 @@ scale = Vector2(0.9225398, 0.9309427)
 text = "START"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=452493930]
-stream = ExtResource("1_wtcfe")
+stream = ExtResource("2_nlkkf")
 
 [node name="Timer" type="Timer" parent="." unique_id=1171409896]
 wait_time = 5.0
 autostart = true
 
 [node name="FlickerAudio" type="AudioStreamPlayer" parent="." unique_id=735730595]
-stream = ExtResource("3_q6r6c")
+stream = ExtResource("3_8qtwp")
 pitch_scale = 0.97
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=828001834]
-stream = ExtResource("4_d21ai")
+stream = ExtResource("4_dy7ct")
 autoplay = true
 
 [node name="StartMenu" type="Sprite2D" parent="." unique_id=709110042]
-position = Vector2(439.25677, 126.06712)
+position = Vector2(439.00003, 122)
 scale = Vector2(0.33442062, 0.33746675)
-texture = ExtResource("3_epypp")
+texture = ExtResource("5_0o4t1")
+
+[node name="ScoreboardSceneOpen" type="Button" parent="." unique_id=1916095154]
+offset_left = 87.0
+offset_top = 155.0
+offset_right = 184.0
+offset_bottom = 186.0
+rotation = -0.20969486
+scale = Vector2(1.3624192, 1.3624192)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_colors/font_hover_color = Color(0, 0.43137255, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("7_qe12f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0o4t1")
+text = "Scoreboard"
 
 [node name="AnimatedDarkness" type="AnimatedSprite2D" parent="." unique_id=1428841380]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(515.2568, 146.06708)
+position = Vector2(438, 133)
 scale = Vector2(6.9190497, 8.201605)
 sprite_frames = SubResource("SpriteFrames_thbym")
 frame = 10
 frame_progress = 0.2523963
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1598192465]
-position = Vector2(439, 126)
+position = Vector2(440, 127)
 scale = Vector2(8.760003, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=427200308]
+offset_left = -227.0
+offset_top = -312.0
+offset_right = -187.0
+offset_bottom = -272.0
+scale = Vector2(34.4706, 27.286818)
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ScoreboardSceneOpen" to="." method="_on_scoreboard_scene_open_pressed"]

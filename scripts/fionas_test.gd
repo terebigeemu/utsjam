@@ -3,7 +3,7 @@ extends Node2D
 @export var radius: float = 50.0
 @export var fill_color: Color = Color(0.3882353, 0.75, 0.2784314, 1)
 @export var bg_color: Color = Color(1, 0.3882353, 0.2784314, 1)
-@export var duration: float = 60.0
+@export var duration: float = 67.0
 @export	var numberOfBirdsHit: int = 0
 
 
@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	var center := Vector2(1750, 150) / 2.0 # the position of the center of the timer
+	var center := Vector2(1800, 150) / 2.0 # the position of the center of the timer
 	draw_circle(center, radius, bg_color) # optional background circle
 	
 	if timer.is_stopped() or timer.wait_time <= 0.0:

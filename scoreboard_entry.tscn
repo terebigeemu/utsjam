@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dend6v7kjuxos"]
+
+[ext_resource type="Theme" uid="uid://ce2uyi827vc5x" path="res://addons/talo/samples/authentication/assets/theme.tres" id="1_2bpgl"]
+[ext_resource type="Script" uid="uid://c72ppt5dawi36" path="res://scripts/talo_leaderboard_entry.gd" id="2_htpk6"]
+[ext_resource type="FontFile" uid="uid://cdube0tv63m7i" path="res://assets/PermanentMarker-Regular.ttf" id="3_oa0vy"]
+
+[node name="Entry" type="Label" unique_id=370825735]
+custom_minimum_size = Vector2(2.08165e-12, 32)
+theme = ExtResource("1_2bpgl")
+theme_override_fonts/font = ExtResource("3_oa0vy")
+theme_override_font_sizes/font_size = 32
+text = "{username}: {score} (best combo = {multiplier}x)"
+script = ExtResource("2_htpk6")

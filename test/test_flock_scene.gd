@@ -7,10 +7,10 @@ var bird_node = preload("res://test/test_bird.tscn")
 
 func _ready():
 	#pigeon_spawn()
-	$Timer.start(0.2)
+	$Timer.start(1)
 
 func _random_time():
-	var spawnTime = randf_range(3.0, 7.0)
+	var spawnTime = randf_range(1.0, 3.0)
 	$Timer.start(spawnTime)
 	
 func _on_spawn_timer_timeout() -> void:
@@ -18,8 +18,9 @@ func _on_spawn_timer_timeout() -> void:
 	pigeon_spawn()
 # Modified Loop from Leo
 func pigeon_spawn():
+	$PigeonSpawnAudio.play()
 	var dir := bool(randi() % 2)
-	for i in range(randfn(20,50)):
+	for i in range(randfn(5,7)):
 		var instance = bird_node.instantiate()
 		var pos := Vector2.from_angle(2*PI*randf())
 		pos *= 100 * randf()
